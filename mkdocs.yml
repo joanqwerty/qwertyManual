@@ -1,0 +1,48 @@
+site_name: QwertyManual
+
+nav:
+  - Inicio:
+      - Introducción: index.md
+  # - Fundamentos de programación:
+  #     - Variables y tipos de datos: fundamentals/variables.md
+  #     - Estructuras de control: fundamentals/control-structures.md
+  #     - Funciones: fundamentals/functions.md
+
+  - Diseño de software:
+      - Introducción al diseño de software: software-design/index.md
+      - Arquitectura de software: software-design/architecture.md
+      - Patrones de diseño: software-design/patterns.md
+
+  - Rational Unified Process:
+      - Introducción a RUP: rup/index.md
+      - Fases del proceso: rup/phases.md
+      - UML: rup/uml.md
+      - 4+1 Vistas: rup/views-4+1.md
+
+  - Linux Kernel Development:
+      - Guía de Desarrollo del Kernel de Linux: linux-development/index.md
+      - Estructura de ramas para el kernel de linux: linux-development/linux-kernel-trees.md
+      - Proyecto Orange Pi Zero 3: linux-development/orangepi/orangepi-zero3.md
+
+theme:
+  name: readthedocs
+  logo: "assets/qwertyMan.png"
+  features:
+    - navigation.path
+
+markdown_extensions:
+  - admonition
+
+plugins:
+  - search:
+      lang: es
+      index_content: true
+  - plantuml:
+      puml_url: https://www.plantuml.com/plantuml/
+      puml_keyword: uml
+      theme:
+        enabled: false
+  - mermaid2
+
+extra_css:
+  - css/extra.css
