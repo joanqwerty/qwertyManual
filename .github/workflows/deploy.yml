@@ -24,7 +24,7 @@ jobs:
         run: |
           pip install mkdocs
           pip install mkdocs-mermaid2-plugin
-          pip install mkdocs-plantuml-plugin
+          pip install mkdocs_plantuml
 
       - name: Construir y desplegar
         run: mkdocs gh-deploy --force
