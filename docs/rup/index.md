@@ -90,7 +90,3 @@ El objetivo es **mantener el sistema operativo y evolucionar con las necesidades
 - **Orientado a casos de uso:** Los requisitos se documentan como casos de uso que guían el desarrollo.
 - **Gestión de riesgos:** Identificación y mitigación de riesgos desde el inicio.
 - **Documentación controlada:** RUP define artefactos y plantillas para estandarizar el proceso.
-
----
-
-Este documento puede ser integrado directamente en tu proyecto **MkDocs** y aparecerá en la navegación lateral como una página de referencia sobre RUP.

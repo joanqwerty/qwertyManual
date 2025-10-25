@@ -1,6 +1,6 @@
 # Guía de Aprendizaje QwertyManual
 
-## ¡Bienvenido a mi Guía de Aprendizaje! 🚀
+## ¡Bienvenido a mi Guía de Aprendizaje!
 
 Esta documentación representa una cuidadosa recopilación de conocimientos, experiencias y recursos que he adquirido a lo largo de mi trayectoria educativa y profesional en el mundo de la tecnología.
 
@@ -8,12 +8,12 @@ Esta documentación representa una cuidadosa recopilación de conocimientos, exp
 
 En esta guía descubrirás una amplia variedad de contenido estructurado y organizado, que incluye:
 
-- 📚 **Recursos educativos** sobre diferentes tecnologías
-- 💻 **Desarrollo de software** y mejores prácticas
-- 🔧 **Herramientas y frameworks** modernos
-- 📖 **Tutoriales paso a paso** para diferentes niveles
-- 💡 **Tips y consejos** basados en experiencia real
-- 🎯 **Proyectos prácticos** y ejemplos de código
+- **Recursos educativos** sobre diferentes tecnologías
+- **Desarrollo de software** y mejores prácticas
+- **Herramientas y frameworks** modernos
+- **Tutoriales paso a paso** para diferentes niveles
+- **Tips y consejos** basados en experiencia real
+- **Proyectos prácticos** y ejemplos de código
 
 ### Para quién es esta guía
 

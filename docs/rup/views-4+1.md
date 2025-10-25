@@ -95,7 +95,3 @@ Proceso continuo posterior al despliegue.
 
 > ✅ = Principalmente utilizado
 > ⚪ = Opcional / menor relevancia
-
----
-
-Este documento puede integrarse directamente en tu proyecto MkDocs y te servirá para mostrar **qué diagramas son recomendables en cada fase de RUP**, siguiendo el enfoque de arquitectura 4+1.
