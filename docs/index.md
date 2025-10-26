@@ -30,7 +30,7 @@ El contenido está organizado de manera lógica y progresiva. Te recomiendo come
 Este proyecto es de código abierto y las contribuciones son bienvenidas. Si deseas aportar:
 
 1. Visita el [repositorio en GitHub](https://github.com/joanqwerty/qwertyManual)
-2. Revisa las [guías de contribución](https://github.com/joanqwerty/qwertyManual/CONTRIBUTING.md)
+2. Revisa las guías de contribución
 3. Crea un fork del proyecto
 4. Envía tus pull requests
 
