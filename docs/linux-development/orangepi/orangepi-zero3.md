@@ -14,6 +14,8 @@ Crea un directorio de trabajo llamado `linux-dev` o el nombre de tu preferencia 
 mkdir linux-dev
 cd linux-dev
 ```
+
+
 A continuacion se enumeran la serie de pasos de desarrollo del proyecto:
 
 ## 1. Descargar repositorios
@@ -26,6 +28,17 @@ git clone -b orange-pi-6.1-sun50iw9 https://github.com/orangepi-xunlong/linux-or
 # O elige la rama orange-pi-5.13-sunxi64
 ```
 
+Lista tu directorio para verificar el contenido.
+```bash
+# Comando para listar
+ls
+```
+
+Deberias tener algo así:
+
+```
+  arm-trusted-firmware linux-orangepi u-boot
+```
 ## 2. Construir las imágenes Docker
 
 ```bash
@@ -54,6 +67,8 @@ Si creaste un contenedor persistente ejecuta este comando, cada que quieras inte
 docker start -ai linux-dev
 ```
 
+Cada que cierres o apagues el contenedor deberas iniciarlo como vimos anteriormente, los siguientes pasos se deben ejecutar cuando estes dentro de la instancia del contenedor de docker.
+
 ## 4. Compilación del bootloader
 
 ### Compilar ARM Trusted Firmware (ATF)
@@ -62,14 +77,20 @@ Entra a la carpeta `arm-trusted-firmware` y compila el proyecto.
 
 ```bash
 cd arm-trusted-firmware
+
+# Ejecuta make <argumentos de entorno ej. PLAT= > <binario a generar Ej. bl13>
 make PLAT=sun50i_h616 bl31
 ```
+
+Esto generara un archivo en esta ruta `build/sun50i_h616/release/bl31.bin`.
 
 ### Copiar bl31.bin a la raíz de U-Boot
 
 ```bash
 cp build/sun50i_h616/release/bl31.bin ../u-boot/
 ```
+
+Este paso es necesario para que no existan errores al compilar el U-Boot.
 
 ### Compilar U-Boot
 
@@ -86,8 +107,17 @@ make -j$(nproc) CROSS_COMPILE=aarch64-linux-gnu-
 
 ## 5. Grabar en la tarjeta SD
 
+A continuación presione `ctrl + d` para salir de tu contenedor, esto te dejara en la carpeta raiz de tu proyecto, asegurate de ingresar de nuevo a la carpeta `u-boot` y desde la terminal de tu computadora ejecuta el siguiente comando para grabar el binario que compilamos en tu tarjeta SD.
+
+En la opción `of=/dev/sdx` cambia por la ruta de tu dispositivo real, ejemplo: `of=/dev/sdb`
+
+
+!!! warning "Advertencia"
+    ⚠️ Ten cuidado con este paso. Podrías dejar inutilizada tu PC si eliges el dispositivo equivocado.
+
+
 ```bash
-sudo dd if=u-boot-sunxi-with-spl.bin of=/dev/sdb bs=1024 seek=8 status=progress
+sudo dd if=u-boot-sunxi-with-spl.bin of=/dev/sdx bs=1024 seek=8 status=progress
 sync
 ```
 
@@ -113,7 +143,13 @@ usb 3-2: ch341-uart converter now attached to ttyUSB0
 sudo screen /dev/ttyUSB0 115200
 ```
 
-**Para salir de screen:** `Ctrl + A`, luego `k`
+Conecta la placa a la corriente y si todo salió bien deberias darte algo parecido a la siguiente salida por terminal.
+
+![u-boot-screen](../../assets/orangepi-z3/u-boot-screen.png)
+
+Ahora si ya tenemos el bootlader grabado y funcional en nuestra SD.
+
+**Para salir de screen:** `Ctrl + A`, luego `k`.
 
 ## 7. Compilación del kernel
 
@@ -156,6 +192,3 @@ mkimage -C none -A arm64 -T script -d boot.cmd boot.scr
 ```bash
 make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- modules_install INSTALL_MOD_PATH=/mnt/rootfs
 ```
-
-
-[Recursos del proyecto](./resources.md)
