@@ -1,10 +1,11 @@
 # Guía Completa de Desarrollo del Kernel de Linux
 
+![Logo de linux](../assets/linux/linux-logo.webp)
+
 ## Introducción
 
 El kernel de Linux es uno de los proyectos de software libre más importantes y complejos en existencia. Esta guía está diseñada para ayudarte a navegar el fascinante mundo del desarrollo del kernel, proporcionando una ruta estructurada desde los conceptos básicos hasta las técnicas avanzadas de desarrollo.
 
-![Logo de linux](../assets/linux/linux-logo.webp)
 
 ## Objetivos de esta Guía
 

@@ -1,12 +1,13 @@
 # Rational Unified Process (RUP)
 
+![Rup Logo](../assets/rup_logo.jpg)
+
 **Rational Unified Process (RUP)**, o Proceso Unificado de Rational, es un enfoque metodológico para el desarrollo de software que proporciona una estructura y guía para gestionar todo el ciclo de vida del desarrollo de software. RUP busca producir software de alta calidad de manera predecible y controlada.
 
 RUP se organiza en **cinco etapas principales**, que ayudan a planificar, diseñar, implementar y validar el software de manera iterativa y progresiva.
 
 ---
 
-![Rup Logo](../assets/rup_logo.jpg)
 
 ## 1. Inicio (Inception)
 

@@ -1,11 +1,14 @@
-# Proyecto Linux Embebido en OrangePi Zero 3 - Allwinner H618
-
-En esta guía aprenderemos a construir un sistema operativo Linux embebido en un OrangePi Zero 3 utilizando el procesador Allwinner H618.
+# Linux Embebido en OrangePi Zero 3 - Allwinner H618 usando Docker
 
 ![Orange pi zero 3](../../assets/orangepi-z3/orangepi-zero3.png)
 
+En esta guía aprenderemos a construir un sistema operativo Linux embebido en un OrangePi Zero 3 utilizando el procesador Allwinner H618 utilizando contenedores de Docker.
+
+
 ## Primeros pasos
-Para iniciar crea un directorio llamado `linux-dev` y cambia al directorio
+
+Para iniciar asegurate de tener `docker` instalado ademas de `git`.
+Crea un directorio de trabajo llamado `linux-dev` o el nombre de tu preferencia y cambia al directorio.
 
 ```bash
 mkdir linux-dev
@@ -45,6 +48,8 @@ docker run -it --name linux-dev --privileged -v $PWD:/home/builder linux-kernel-
 
 ### Iniciar el contenedor linux-dev existente
 
+Si creaste un contenedor persistente ejecuta este comando, cada que quieras interactuar con el, de lo contrario utiliza la `Opción 1` del paso anterior.
+
 ```bash
 docker start -ai linux-dev
 ```
@@ -52,6 +57,8 @@ docker start -ai linux-dev
 ## 4. Compilación del bootloader
 
 ### Compilar ARM Trusted Firmware (ATF)
+
+Entra a la carpeta `arm-trusted-firmware` y compila el proyecto.
 
 ```bash
 cd arm-trusted-firmware
@@ -66,8 +73,13 @@ cp build/sun50i_h616/release/bl31.bin ../u-boot/
 
 ### Compilar U-Boot
 
+Si estas en la carpeta `arm-trusted-firmware` ve hacia atrás y entra en la carpeta `u-boot`.
+
 ```bash
+# Salir de la carpeta anterior y entrar a u-boot
 cd ../u-boot
+
+# Compilar U-Boot
 make orangepi_zero3_defconfig
 make -j$(nproc) CROSS_COMPILE=aarch64-linux-gnu-
 ```
