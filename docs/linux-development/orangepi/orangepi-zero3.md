@@ -16,7 +16,7 @@ cd linux-dev
 ```
 
 
-A continuacion se enumeran la serie de pasos de desarrollo del proyecto:
+A continuación se enumeran la serie de pasos de desarrollo del proyecto:
 
 ## 1. Descargar repositorios
 
@@ -107,7 +107,7 @@ make -j$(nproc) CROSS_COMPILE=aarch64-linux-gnu-
 
 ## 5. Grabar en la tarjeta SD
 
-A continuación presione `ctrl + d` para salir de tu contenedor, esto te dejara en la carpeta raiz de tu proyecto, asegurate de ingresar de nuevo a la carpeta `u-boot` y desde la terminal de tu computadora ejecuta el siguiente comando para grabar el binario que compilamos en tu tarjeta SD.
+A continuación presione `ctrl + d` para salir de tu contenedor, esto te dejará en la carpeta raíz de tu proyecto, asegurate de ingresar de nuevo a la carpeta `u-boot` y desde la terminal de tu computadora ejecuta el siguiente comando para grabar el binario que compilamos en tu tarjeta SD.
 
 En la opción `of=/dev/sdx` cambia por la ruta de tu dispositivo real, ejemplo: `of=/dev/sdb`
 
@@ -178,7 +178,7 @@ Y volvemos a nuestra ruta inicial del kernel.
 
 ### Iniciando la compilación
 
-Volvemos a nuestro proyecto raiz e ingresamos al contedor, y desde ahí ingresamos de nuevo al proyecto `linux-orangepi` y compilamos la configuración del kernel.
+Volvemos a nuestro proyecto raíz e ingresamos al contenedor, y desde ahí ingresamos de nuevo al proyecto `linux-orangepi` y compilamos la configuración del kernel.
 
 ```bash
 make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- sun50iw9_defconfig
@@ -228,4 +228,4 @@ make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- modules_install INSTALL_MOD_PAT
 
 ## Próximos Pasos
 
-En la siguiente sección seguiremos con la segunda parte del proyecto la cual consiste en construir el `rootfs` sistema de archivos principal, e integraremos tanto el kernel como al boorloader para crear una imagen lista para ejecutar en la OrangePi Zero 3.
+En la siguiente sección seguiremos con la segunda parte del proyecto la cual consiste en construir el `rootfs` sistema de archivos principal, e integraremos tanto el kernel como al bootloader para crear una imagen lista para ejecutar en la OrangePi Zero 3.
