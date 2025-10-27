@@ -23,7 +23,10 @@ nav:
   - Linux Kernel Development:
       - Guía de Desarrollo de Linux Embebido: linux-development/index.md
       - Estructura de ramas para el kernel de linux: linux-development/linux-kernel-trees.md
-      - Linux embebido en Orange Pi Zero 3: linux-development/orangepi/orangepi-zero3.md
+      
+      - Linux embebido en Orange Pi Zero 3:
+        - Primera parte de Linux embebido en Orange Pi Zero 3: linux-development/orangepi/orangepi-zero3.md
+        - Segunda parte de Linux embebido en Orange Pi Zero 3: linux-development/orangepi/rootfs.md
 
 theme:
   name: readthedocs

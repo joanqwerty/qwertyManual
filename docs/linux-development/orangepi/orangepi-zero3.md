@@ -204,28 +204,6 @@ make -j$(nproc) ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu-
 
 Si la compilación se realizó exitosamente tendremos la imagen del kernel dentro de la carpeta `arch/arm64/boot` con el nombre de `Image`, y los devices trees compilados estaran en la carpeta `arch/arm64/boot/dts/allwinner` los archivos tendrán la extensión `.dtb`.
 
-<!-- 
-### Compilar Device Tree
-
-Si solo quieres algun device tree especifico entonces solo eliges y lo compilas.
-
-```bash
-make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- \
-  allwinner/sun50i-h618-orangepi-zero3.dtb
-```
-
-### Compilar boot.cmd
-
-```bash
-mkimage -C none -A arm64 -T script -d boot.cmd boot.scr
-```
-
-### Para instalar los modulos en rootfs
-
-```bash
-make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- modules_install INSTALL_MOD_PATH=/mnt/rootfs
-``` -->
-
 ## Próximos Pasos
 
-En la siguiente sección seguiremos con la segunda parte del proyecto la cual consiste en construir el `rootfs` sistema de archivos principal, e integraremos tanto el kernel como al bootloader para crear una imagen lista para ejecutar en la OrangePi Zero 3.
+En la siguiente sección seguiremos con la segunda parte del proyecto la cual consiste en construir el `rootfs` sistema de archivos principal de nuestro sistema Linux Embebido.
