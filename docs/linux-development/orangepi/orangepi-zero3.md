@@ -56,7 +56,7 @@ docker run -it --rm -v $PWD:/home/builder uboot-builder bash
 docker run -it --name linux-dev --privileged -v $PWD:/home/builder uboot-builder bash
 
 # Opción 3: Contenedor persistente con linux-kernel-dev
-docker run -it --name linux-dev --privileged -v $PWD:/home/builder linux-kernel-dev /bin/bash
+docker run -it --name linux-dev --privileged -v $PWD:/home/builder linux-kernel-dev bash
 ```
 
 ### Iniciar el contenedor linux-dev existente
@@ -153,32 +153,65 @@ Ahora si ya tenemos el bootlader grabado y funcional en nuestra SD.
 
 ## 7. Compilación del kernel
 
-### Compilar Device Tree
-
-```bash
-make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- \
-  allwinner/sun50i-h618-orangepi-zero3.dtb
-```
 
 ### Configurar el kernel
 
-```bash
-make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- linux_sunxi64_defconfig
+Para la compilacion del kernel ingresamos a la carpeta `linux-orangepi`, el siguiente paso es descargar un archivo de configuración que necesitamos para el kernel, asi que nos dirigimos a la siguiente ruta `arch/arm64/configs`.
 
-# Para compilar y ver el menuconfig
+```bash
+cd arch/arm64/configs
+```
+
+Estando dentro descargamos la configuracion:
+
+```bash
+wget https://raw.githubusercontent.com/orangepi-xunlong/orangepi-build/refs/heads/next/external/config/kernel/linux-6.1-sun50iw9-next.config
+```
+
+Renombramos el archivo como una defconfig.
+
+```bash
+mv linux-6.1-sun50iw9-next.config sun50iw9_defconfig
+```
+
+Y volvemos a nuestra ruta inicial del kernel.
+
+### Iniciando la compilación
+
+Volvemos a nuestro proyecto raiz e ingresamos al contedor, y desde ahí ingresamos de nuevo al proyecto `linux-orangepi` y compilamos la configuración del kernel.
+
+```bash
+make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- sun50iw9_defconfig
+
+```
+
+Opcional compilamos el menuconfig para ver los parametros.
+
+```bash
+# Para compilar y ver el menuconfig (Opcional)
 make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- menuconfig
 ```
 
 ### Compilar el kernel
 
+Inciamos la compilación del kernel, esto podria demorar algunos minutos o 1 hora dependiendo de los recursos de tu PC.
+
+Con este comando compilamos todos los recursos como el kernel, los modulos, y los devices trees.
+
 ```bash
-make -j$(nproc) ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- Image modules
+make -j$(nproc) ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu-
 ```
 
-### Compilar todo junto (opción recomendada)
+Si la compilación se realizó exitosamente tendremos la imagen del kernel dentro de la carpeta `arch/arm64/boot` con el nombre de `Image`, y los devices trees compilados estaran en la carpeta `arch/arm64/boot/dts/allwinner` los archivos tendrán la extensión `.dtb`.
+
+<!-- 
+### Compilar Device Tree
+
+Si solo quieres algun device tree especifico entonces solo eliges y lo compilas.
 
 ```bash
-make -j$(nproc) ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- Image dtbs modules
+make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- \
+  allwinner/sun50i-h618-orangepi-zero3.dtb
 ```
 
 ### Compilar boot.cmd
@@ -191,4 +224,8 @@ mkimage -C none -A arm64 -T script -d boot.cmd boot.scr
 
 ```bash
 make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- modules_install INSTALL_MOD_PATH=/mnt/rootfs
-```
+``` -->
+
+## Próximos Pasos
+
+En la siguiente sección seguiremos con la segunda parte del proyecto la cual consiste en construir el `rootfs` sistema de archivos principal, e integraremos tanto el kernel como al boorloader para crear una imagen lista para ejecutar en la OrangePi Zero 3.

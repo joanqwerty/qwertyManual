@@ -21,7 +21,7 @@ nav:
       - 4+1 Vistas: rup/views-4+1.md
 
   - Linux Kernel Development:
-      - Guía de Desarrollo del Kernel de Linux: linux-development/index.md
+      - Guía de Desarrollo de Linux Embebido: linux-development/index.md
       - Estructura de ramas para el kernel de linux: linux-development/linux-kernel-trees.md
       - Linux embebido en Orange Pi Zero 3: linux-development/orangepi/orangepi-zero3.md
 
