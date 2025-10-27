@@ -75,7 +75,7 @@ Settings → Build static binary (no shared libs)
 
 La activamos dando la tecla `[space]`.
 
-![busybox menu](/assets/orangepi-z3/busybox-menu.png)
+![busybox menu](../../assets/orangepi-z3/busybox-menu.png)
 
 Tambien debemos desactivar la opcion de aceleración SHA1.
 
