@@ -97,7 +97,7 @@ Si el proceso fue exitoso instalamos busybox en nuestro `rootfs`.
     Asegurate que la ruta del rootfs sea la correcta, de lo contrario podria no instalarse o crear problemas.
 
 ```bash
-make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- install CONFIG_PREFIX=../rootfs
+make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- INSTALL_MOD_PATH=../rootfs-arm64 modules_install
 ```
 Ahora en nuestro directorio `rootfs` deberiamos tener instalado busybox, puedes comprobarlo, deberias tener este archivo.
 
