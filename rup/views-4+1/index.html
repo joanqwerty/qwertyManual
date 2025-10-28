@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>4+1 Vistas - QwertyManual</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/extra.css" rel="stylesheet" />
+        <link href="../../assets/mkdocs_puml/puml.css" rel="stylesheet" />
+        <link href="../../assets/mkdocs_puml/interaction.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "4+1 Vistas";
+        var mkdocs_page_input_path = "rup/views-4+1.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../..">
+          <img src="../../assets/qwertyMan.png" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Inicio</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../..">Introducción</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Diseño de software</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../software-design/">Introducción al diseño de software</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../software-design/architecture/">Arquitectura de software</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../software-design/patterns/">Patrones de diseño</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Rational Unified Process</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../">Introducción a RUP</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../phases/">Fases del proceso</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../uml/">UML</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">4+1 Vistas</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1-inicio-inception">1. Inicio (Inception)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-elaboracion-elaboration">2. Elaboración (Elaboration)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-construccion-construction">3. Construcción (Construction)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4-pruebas-transicion-transition">4. Pruebas / Transición (Transition)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#5-mantenimiento-maintenance">5. Mantenimiento (Maintenance)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#resumen-visual">Resumen visual</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Linux Kernel Development</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../linux-development/">Guía de Desarrollo de Linux Embebido</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../linux-development/linux-kernel-trees/">Estructura de ramas para el kernel de linux</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Linux embebido en Orange Pi Zero 3</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../linux-development/orangepi/orangepi-zero3/">Primera parte de Linux embebido en Orange Pi Zero 3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../linux-development/orangepi/rootfs/">Segunda parte de Linux embebido en Orange Pi Zero 3</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">QwertyManual</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Rational Unified Process</li>
+      <li class="breadcrumb-item active">4+1 Vistas</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="rational-unified-process-rup-y-el-modelo-41-de-vistas">Rational Unified Process (RUP) y el Modelo 4+1 de Vistas</h1>
+<p><strong>Rational Unified Process (RUP)</strong> organiza el desarrollo de software en fases iterativas, mientras que el <strong>Modelo 4+1 de Vistas</strong> ofrece una forma de documentar y visualizar la arquitectura del sistema desde cinco perspectivas:</p>
+<ul>
+<li><strong>Vista Lógica</strong> (Logical)</li>
+<li><strong>Vista de Procesos</strong> (Process)</li>
+<li><strong>Vista de Desarrollo</strong> (Development)</li>
+<li><strong>Vista Física</strong> (Physical)</li>
+<li><strong>Vista de Casos de Uso</strong> (Use Case)</li>
+</ul>
+<p>A continuación se muestra cómo se relacionan las etapas de RUP con los diagramas típicos de cada vista.</p>
+<hr />
+<h2 id="1-inicio-inception">1. Inicio (Inception)</h2>
+<p>En esta fase se define el alcance y los requisitos del sistema.</p>
+<p><strong>Diagramas usados:</strong></p>
+<ul>
+<li><strong>Vista de Casos de Uso:</strong> Diagramas de casos de uso para identificar actores y funcionalidades clave.</li>
+<li><strong>Vista Lógica (preliminar):</strong> Diagramas de clases de alto nivel para mostrar conceptos principales.</li>
+<li><strong>Vista de Procesos (opcional):</strong> Diagrama de flujo de trabajo de alto nivel para identificar procesos críticos.</li>
+</ul>
+<p><strong>Objetivo:</strong> Validar la viabilidad y definir los límites del sistema.</p>
+<hr />
+<h2 id="2-elaboracion-elaboration">2. Elaboración (Elaboration)</h2>
+<p>Se refinan los requisitos y se establece la arquitectura.</p>
+<p><strong>Diagramas usados:</strong></p>
+<ul>
+<li><strong>Vista Lógica:</strong> Diagramas de clases detallados y diagramas de secuencia para modelar interacciones clave.</li>
+<li><strong>Vista de Procesos:</strong> Diagramas de actividad y colaboración para mostrar concurrencia y sincronización.</li>
+<li><strong>Vista de Desarrollo:</strong> Diagramas de componentes para planificar la estructura de módulos.</li>
+<li><strong>Vista de Casos de Uso:</strong> Refinamiento de casos de uso y escenarios principales.</li>
+</ul>
+<p><strong>Objetivo:</strong> Construir una arquitectura sólida y minimizar riesgos técnicos.</p>
+<hr />
+<h2 id="3-construccion-construction">3. Construcción (Construction)</h2>
+<p>Se implementa y prueba el sistema.</p>
+<p><strong>Diagramas usados:</strong></p>
+<ul>
+<li><strong>Vista de Desarrollo:</strong> Diagramas de componentes y paquetes para guiar la implementación.</li>
+<li><strong>Vista Lógica:</strong> Diagramas de clases y secuencias para validar diseño detallado.</li>
+<li><strong>Vista de Procesos:</strong> Diagramas de comunicación y actividad para controlar ejecución concurrente.</li>
+</ul>
+<p><strong>Objetivo:</strong> Producir un sistema funcional listo para pruebas de integración.</p>
+<hr />
+<h2 id="4-pruebas-transicion-transition">4. Pruebas / Transición (Transition)</h2>
+<p>Se valida el sistema antes de su despliegue.</p>
+<p><strong>Diagramas usados:</strong></p>
+<ul>
+<li><strong>Vista de Casos de Uso:</strong> Diagramas de casos de uso para pruebas de aceptación y validación por el usuario.</li>
+<li><strong>Vista Física:</strong> Diagramas de despliegue para planificar la infraestructura de producción.</li>
+<li><strong>Vista de Procesos:</strong> Diagramas de actividad para verificar flujos críticos durante la operación.</li>
+</ul>
+<p><strong>Objetivo:</strong> Garantizar calidad, desempeño y satisfacción del usuario.</p>
+<hr />
+<h2 id="5-mantenimiento-maintenance">5. Mantenimiento (Maintenance)</h2>
+<p>Proceso continuo posterior al despliegue.</p>
+<p><strong>Diagramas usados:</strong></p>
+<ul>
+<li><strong>Vista de Desarrollo:</strong> Diagramas de componentes para planificar mejoras o refactorizaciones.</li>
+<li><strong>Vista de Casos de Uso:</strong> Diagramas de casos de uso para nuevas funcionalidades.</li>
+<li><strong>Vista Física:</strong> Diagramas de despliegue para cambios en infraestructura.</li>
+</ul>
+<p><strong>Objetivo:</strong> Mantener y evolucionar el sistema de manera controlada.</p>
+<hr />
+<h2 id="resumen-visual">Resumen visual</h2>
+<table>
+<thead>
+<tr>
+<th>Fase</th>
+<th>Casos de Uso</th>
+<th>Lógica</th>
+<th>Procesos</th>
+<th>Desarrollo</th>
+<th>Física</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Inicio</td>
+<td>✅</td>
+<td>⚪</td>
+<td>⚪</td>
+<td>⚪</td>
+<td>⚪</td>
+</tr>
+<tr>
+<td>Elaboración</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>⚪</td>
+</tr>
+<tr>
+<td>Construcción</td>
+<td>⚪</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>⚪</td>
+</tr>
+<tr>
+<td>Pruebas</td>
+<td>✅</td>
+<td>⚪</td>
+<td>✅</td>
+<td>⚪</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Mantenimiento</td>
+<td>✅</td>
+<td>⚪</td>
+<td>⚪</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>✅ = Principalmente utilizado
+⚪ = Opcional / menor relevancia</p>
+</blockquote>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../uml/" class="btn btn-neutral float-left" title="UML"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../linux-development/" class="btn btn-neutral float-right" title="Guía de Desarrollo de Linux Embebido">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../uml/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../linux-development/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+      <script src="../../assets/mkdocs_puml/puml.js"></script>
+      <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+      <script src="../../assets/mkdocs_puml/interaction.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

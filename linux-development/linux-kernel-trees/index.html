@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="../../img/favicon.ico" rel="shortcut icon"/>
+<title>Estructura de ramas para el kernel de linux - QwertyManual</title>
+<link href="../../css/theme.css" rel="stylesheet"/>
+<link href="../../css/theme_extra.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
+<link href="../../css/extra.css" rel="stylesheet"/>
+<link href="../../assets/mkdocs_puml/puml.css" rel="stylesheet"/>
+<link href="../../assets/mkdocs_puml/interaction.css" rel="stylesheet"/>
+<script>
+        // Current page data
+        var mkdocs_page_name = "Estructura de ramas para el kernel de linux";
+        var mkdocs_page_input_path = "linux-development/linux-kernel-trees.md";
+        var mkdocs_page_url = null;
+      </script>
+<!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+</head>
+<body class="wy-body-for-nav" role="document">
+<div class="wy-grid-for-nav">
+<nav class="wy-nav-side stickynav" data-toggle="wy-nav-shift">
+<div class="wy-side-scroll">
+<div class="wy-side-nav-search">
+<a href="../..">
+<img alt="Logo" class="logo" src="../../assets/qwertyMan.png"/>
+</a><div role="search">
+<form action="../../search.html" class="wy-form" id="rtd-search-form" method="get">
+<input aria-label="Search docs" name="q" placeholder="Search docs" title="Type search term here" type="text"/>
+</form>
+</div>
+</div>
+<div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+<p class="caption"><span class="caption-text">Inicio</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../..">Introducción</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Diseño de software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../software-design/">Introducción al diseño de software</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../software-design/architecture/">Arquitectura de software</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../software-design/patterns/">Patrones de diseño</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Rational Unified Process</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../rup/">Introducción a RUP</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../rup/phases/">Fases del proceso</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../rup/uml/">UML</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../rup/views-4%2B1/">4+1 Vistas</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Linux Kernel Development</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../">Guía de Desarrollo de Linux Embebido</a>
+</li>
+<li class="toctree-l1 current"><a class="reference internal current" href="#">Estructura de ramas para el kernel de linux</a>
+<ul class="current">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal">Linux embebido en Orange Pi Zero 3</a>
+<ul>
+<li class="toctree-l2"><a class="reference internal" href="../orangepi/orangepi-zero3/">Primera parte de Linux embebido en Orange Pi Zero 3</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../orangepi/rootfs/">Segunda parte de Linux embebido en Orange Pi Zero 3</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+<nav aria-label="Mobile navigation menu" class="wy-nav-top" role="navigation">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../..">QwertyManual</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content"><div aria-label="breadcrumbs navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a aria-label="Docs" class="icon icon-home" href="../.."></a></li>
+<li class="breadcrumb-item">Linux Kernel Development</li>
+<li class="breadcrumb-item active">Estructura de ramas para el kernel de linux</li>
+<li class="wy-breadcrumbs-aside">
+</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div class="section" itemprop="articleBody">
+<h1 id="estructura-y-gestion-de-ramas-en-el-kernel-de-linux">Estructura y Gestión de Ramas en el Kernel de Linux</h1>
+<p>Breve resumen
+- El kernel tiene varias ramas con roles claros: la rama principal (mainline) donde Linus integra los cambios, <code>linux-next</code> como integrador de parches de subsistemas, ramas de lanzamiento (rc), ramas <code>stable</code> para correcciones y ramas <code>longterm</code> (LTS) para soporte prolongado. Además hay ramas tópicas/por subsistema (topic/<em>, for-next/</em>) donde se preparan conjuntos de parches.</p>
+<p>Flujo típico (resumen)
+1. Desarrolladores envían parches a ramas topic/subsystem.
+2. Los mantenedores consolidan y envían a <code>for-next</code> / <code>topic/*</code>.
+3. <code>linux-next</code> integra ramas de subsistema para pruebas.
+4. Linus mergea desde <code>linux-next</code> a <code>main</code> y crea release candidates (<code>vX.Y-rcN</code>).
+5. Tras el lanzamiento, cambios críticos se aplican a <code>stable/vX.Y</code>.
+6. Algunas versiones se marcan <code>longterm</code> para parches a largo plazo.</p>
+<div class="mermaid">gitGraph
+    commit id: "v6.5" tag: "v6.5"
+    branch linux-next
+    commit id: "merge-integration"
+    branch for-next
+    commit id: "subsys-merge"
+    checkout linux-next
+    merge for-next
+    checkout main
+    merge linux-next
+    commit id: "v6.6-rc1" tag: "v6.6-rc1"
+    branch stable/v6.x
+    checkout stable/v6.x
+    commit id: "stable-fix"
+    checkout main
+    branch longterm/v5.x
+    commit id: "lts-fix"
+    checkout longterm/v5.x
+    commit id: "lts-backport"
+    checkout main
+    branch topic/driver-x
+    commit id: "driver-x"
+    checkout linux-next
+    merge topic/driver-x
+</div>
+</div>
+</div><footer>
+<div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
+<a class="btn btn-neutral float-left" href="../" title="Guía de Desarrollo de Linux Embebido"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-right" href="../orangepi/orangepi-zero3/" title="Primera parte de Linux embebido en Orange Pi Zero 3">Next <span class="icon icon-circle-arrow-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<!-- Copyright etc -->
+</div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+</div>
+</div>
+</section>
+</div>
+<div aria-label="Versions" class="rst-versions" role="note">
+<span class="rst-current-version" data-toggle="rst-current-version">
+<span><a href="../" style="color: #fcfcfc">« Previous</a></span>
+<span><a href="../orangepi/orangepi-zero3/" style="color: #fcfcfc">Next »</a></span>
+</span>
+</div>
+<script src="../../js/jquery-3.6.0.min.js"></script>
+<script>var base_url = "../..";</script>
+<script src="../../js/theme_extra.js"></script>
+<script src="../../js/theme.js"></script>
+<script src="../../search/main.js"></script>
+<script src="../../assets/mkdocs_puml/puml.js"></script>
+<script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+<script src="../../assets/mkdocs_puml/interaction.js"></script>
+<script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script></body>
+</html>

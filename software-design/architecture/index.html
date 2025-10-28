@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Arquitectura de software - QwertyManual</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/extra.css" rel="stylesheet" />
+        <link href="../../assets/mkdocs_puml/puml.css" rel="stylesheet" />
+        <link href="../../assets/mkdocs_puml/interaction.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Arquitectura de software";
+        var mkdocs_page_input_path = "software-design/architecture.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../..">
+          <img src="../../assets/qwertyMan.png" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Inicio</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../..">Introducción</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Diseño de software</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../">Introducción al diseño de software</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Arquitectura de software</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#que-es-la-arquitectura-de-software">¿Qué es la arquitectura de software?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#importancia-de-la-arquitectura-de-software">Importancia de la arquitectura de software</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#elementos-clave">Elementos clave</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../patterns/">Patrones de diseño</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Rational Unified Process</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../rup/">Introducción a RUP</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../rup/phases/">Fases del proceso</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../rup/uml/">UML</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../rup/views-4%2B1/">4+1 Vistas</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Linux Kernel Development</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../linux-development/">Guía de Desarrollo de Linux Embebido</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../linux-development/linux-kernel-trees/">Estructura de ramas para el kernel de linux</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Linux embebido en Orange Pi Zero 3</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../linux-development/orangepi/orangepi-zero3/">Primera parte de Linux embebido en Orange Pi Zero 3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../linux-development/orangepi/rootfs/">Segunda parte de Linux embebido en Orange Pi Zero 3</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">QwertyManual</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Diseño de software</li>
+      <li class="breadcrumb-item active">Arquitectura de software</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="arquitectura-de-software">Arquitectura de software</h1>
+<p>La arquitectura de software es una disciplina fundamental en el desarrollo de sistemas informáticos que se enfoca en el diseño y organización de alto nivel de los componentes de software y sus interacciones. Define la estructura general del sistema, estableciendo cómo se organizan, comunican y colaboran los diferentes módulos, servicios y componentes para cumplir con los requisitos funcionales y no funcionales del proyecto.</p>
+<h2 id="que-es-la-arquitectura-de-software">¿Qué es la arquitectura de software?</h2>
+<p>La arquitectura de software representa las decisiones de diseño más importantes y fundamentales de un sistema, aquellas que son difíciles de cambiar una vez implementadas. Incluye la definición de componentes, sus responsabilidades, las interfaces entre ellos, y los patrones de interacción que guiarán el desarrollo del software.</p>
+<h2 id="importancia-de-la-arquitectura-de-software">Importancia de la arquitectura de software</h2>
+<ul>
+<li><strong>Escalabilidad</strong>: Permite que el sistema pueda crecer y adaptarse a mayores demandas</li>
+<li><strong>Mantenibilidad</strong>: Facilita la modificación y evolución del código a lo largo del tiempo</li>
+<li><strong>Reutilización</strong>: Promueve el uso de componentes en diferentes partes del sistema</li>
+<li><strong>Calidad</strong>: Asegura que el software cumpla con estándares de rendimiento, seguridad y confiabilidad</li>
+<li><strong>Comunicación</strong>: Sirve como lenguaje común entre desarrolladores, stakeholders y equipos técnicos</li>
+</ul>
+<h2 id="elementos-clave">Elementos clave</h2>
+<ol>
+<li><strong>Componentes</strong>: Unidades modulares de software con responsabilidades específicas</li>
+<li><strong>Conectores</strong>: Mecanismos de comunicación entre componentes</li>
+<li><strong>Patrones arquitectónicos</strong>: Soluciones probadas para problemas comunes de diseño</li>
+<li><strong>Vistas arquitectónicas</strong>: Diferentes perspectivas del sistema (lógica, física, de desarrollo, etc.)</li>
+<li><strong>Restricciones</strong>: Limitaciones técnicas, de negocio o de recursos que influyen en el diseño</li>
+</ol>
+<p>La arquitectura de software es esencial para el éxito de cualquier proyecto de desarrollo, ya que proporciona la base sólida sobre la cual se construye todo el sistema.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../" class="btn btn-neutral float-left" title="Introducción al diseño de software"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../patterns/" class="btn btn-neutral float-right" title="Patrones de diseño">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../patterns/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+      <script src="../../assets/mkdocs_puml/puml.js"></script>
+      <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+      <script src="../../assets/mkdocs_puml/interaction.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

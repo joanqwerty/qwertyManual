@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>UML - QwertyManual</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/extra.css" rel="stylesheet" />
+        <link href="../../assets/mkdocs_puml/puml.css" rel="stylesheet" />
+        <link href="../../assets/mkdocs_puml/interaction.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "UML";
+        var mkdocs_page_input_path = "rup/uml.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../..">
+          <img src="../../assets/qwertyMan.png" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Inicio</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../..">Introducción</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Diseño de software</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../software-design/">Introducción al diseño de software</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../software-design/architecture/">Arquitectura de software</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../software-design/patterns/">Patrones de diseño</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Rational Unified Process</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../">Introducción a RUP</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../phases/">Fases del proceso</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">UML</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1-diagramas-estructurales">1. Diagramas Estructurales</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#11-diagrama-de-clases">1.1 Diagrama de Clases</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#12-diagrama-de-componentes">1.2 Diagrama de Componentes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#13-diagrama-de-despliegue-deployment">1.3 Diagrama de Despliegue (Deployment)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-diagramas-de-comportamiento">2. Diagramas de Comportamiento</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#21-diagrama-de-casos-de-uso">2.1 Diagrama de Casos de Uso</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#22-diagrama-de-secuencia">2.2 Diagrama de Secuencia</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#23-diagrama-de-actividad">2.3 Diagrama de Actividad</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#24-diagrama-de-estados">2.4 Diagrama de Estados</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../views-4%2B1/">4+1 Vistas</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Linux Kernel Development</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../linux-development/">Guía de Desarrollo de Linux Embebido</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../linux-development/linux-kernel-trees/">Estructura de ramas para el kernel de linux</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Linux embebido en Orange Pi Zero 3</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../linux-development/orangepi/orangepi-zero3/">Primera parte de Linux embebido en Orange Pi Zero 3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../linux-development/orangepi/rootfs/">Segunda parte de Linux embebido en Orange Pi Zero 3</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">QwertyManual</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Rational Unified Process</li>
+      <li class="breadcrumb-item active">UML</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="introduccion-a-uml-y-diagramas-con-plantuml">Introducción a UML y Diagramas con PlantUML</h1>
+<p>UML (Unified Modeling Language) es un lenguaje gráfico estandarizado para visualizar, especificar, construir y documentar sistemas de software. UML permite representar distintos aspectos de un sistema mediante diagramas, que se agrupan en diagramas estructurales y diagramas de comportamiento.</p>
+<p>A continuación se incluyen ejemplos prácticos usando PlantUML.</p>
+<hr />
+<h2 id="1-diagramas-estructurales">1. Diagramas Estructurales</h2>
+<h3 id="11-diagrama-de-clases">1.1 Diagrama de Clases</h3>
+<pre><code class="language-puml">@startuml
+class Usuario {
+    -nombre: String
+    -email: String
+    +login(): boolean
+    +logout(): void
+}
+
+class Producto {
+    -nombre: String
+    -precio: float
+    +comprar(): void
+}
+
+Usuario &quot;1&quot; --&gt; &quot;*&quot; Producto : compra
+@enduml
+</code></pre>
+<div class='puml-container'><div class="puml light" style="display: block"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" data-diagram-type="CLASS" height="301px" preserveAspectRatio="xMidYMid meet" style="width:150px;height:301px;background:#FFFFFF;" version="1.1" viewBox="0 0 150 301" width="150px" zoomAndPan="magnify" class="diagram"><defs/><g><g class="entity" data-entity="Usuario" data-source-line="1" data-uid="ent0002" id="entity_Usuario"><rect fill="#F1F1F1" height="113.1875" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="136.168" x="7" y="7"/><ellipse cx="44.9337" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1;"/><path d="M47.9025,28.6406 Q47.3244,28.9375 46.6837,29.0781 Q46.0431,29.2344 45.34,29.2344 Q42.84,29.2344 41.5119,27.5938 Q40.1994,25.9375 40.1994,22.8125 Q40.1994,19.6875 41.5119,18.0313 Q42.84,16.375 45.34,16.375 Q46.0431,16.375 46.6837,16.5313 Q47.34,16.6875 47.9025,16.9844 L47.9025,19.7031 Q47.2775,19.125 46.6837,18.8594 Q46.09,18.5781 45.465,18.5781 Q44.1212,18.5781 43.4337,19.6563 Q42.7462,20.7188 42.7462,22.8125 Q42.7462,24.9063 43.4337,25.9844 Q44.1212,27.0469 45.465,27.0469 Q46.09,27.0469 46.6837,26.7813 Q47.2775,26.5 47.9025,25.9219 L47.9025,28.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="53.2041" x="64.0301" y="27.8467">Usuario</text><line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="142.168" y1="39" y2="39"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1;" width="6" x="15" y="49.6484"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="105.2803" x="27" y="55.9951">nombre: String</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1;" width="6" x="15" y="65.9453"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="89.5576" x="27" y="72.292">email: String</text><line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="142.168" y1="79.5938" y2="79.5938"/><ellipse cx="18" cy="93.2422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="110.168" x="27" y="96.5889">login(): boolean</text><ellipse cx="18" cy="109.5391" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="93.9873" x="27" y="112.8857">logout(): void</text></g><g class="entity" data-entity="Producto" data-source-line="8" data-uid="ent0003" id="entity_Producto"><rect fill="#F1F1F1" height="96.8906" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="134.5957" x="7.79" y="197.19"/><ellipse cx="40.9341" cy="213.19" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1;"/><path d="M43.9029,218.8306 Q43.3248,219.1275 42.6841,219.2681 Q42.0435,219.4244 41.3404,219.4244 Q38.8404,219.4244 37.5123,217.7838 Q36.1998,216.1275 36.1998,213.0025 Q36.1998,209.8775 37.5123,208.2213 Q38.8404,206.565 41.3404,206.565 Q42.0435,206.565 42.6841,206.7213 Q43.3404,206.8775 43.9029,207.1744 L43.9029,209.8931 Q43.2779,209.315 42.6841,209.0494 Q42.0904,208.7681 41.4654,208.7681 Q40.1216,208.7681 39.4341,209.8463 Q38.7466,210.9088 38.7466,213.0025 Q38.7466,215.0963 39.4341,216.1744 Q40.1216,217.2369 41.4654,217.2369 Q42.0904,217.2369 42.6841,216.9713 Q43.2779,216.69 43.9029,216.1119 L43.9029,218.8306 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="62.2754" x="58.9662" y="218.0367">Producto</text><line style="stroke:#181818;stroke-width:0.5;" x1="8.79" x2="141.3857" y1="229.19" y2="229.19"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1;" width="6" x="15.79" y="239.8384"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="105.2803" x="27.79" y="246.1851">nombre: String</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1;" width="6" x="15.79" y="256.1353"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="84.0273" x="27.79" y="262.482">precio: float</text><line style="stroke:#181818;stroke-width:0.5;" x1="8.79" x2="141.3857" y1="269.7838" y2="269.7838"/><ellipse cx="18.79" cy="283.4322" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="108.5957" x="27.79" y="286.7789">comprar(): void</text></g><g class="link" data-entity-1="Usuario" data-entity-2="Producto" data-source-line="14" data-uid="lnk4" id="link_Usuario_Producto"><path codeLine="14" d="M75.08,120.57 C75.08,145.04 75.08,167.44 75.08,190.88" fill="none" id="Usuario-to-Producto" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="75.08,196.88,79.08,187.88,75.08,191.88,71.08,187.88,75.08,196.88" style="stroke:#181818;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="49.3276" x="76.08" y="163.2569">compra</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8.271" x="66.6327" y="140.0996">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6.5" x="68.6922" y="186.0453">*</text></g></g></svg></div></div>
+
+<hr />
+<h3 id="12-diagrama-de-componentes">1.2 Diagrama de Componentes</h3>
+<pre><code class="language-puml">@startuml
+package &quot;Sistema de Ventas&quot; {
+    [Interfaz Web] --&gt; [Controlador]
+    [Controlador] --&gt; [Servicio de Usuarios]
+    [Controlador] --&gt; [Servicio de Productos]
+    [Servicio de Usuarios] --&gt; [Base de Datos]
+    [Servicio de Productos] --&gt; [Base de Datos]
+}
+@enduml
+</code></pre>
+<div class='puml-container'><div class="puml light" style="display: block"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" data-diagram-type="DESCRIPTION" height="429px" preserveAspectRatio="xMidYMid meet" style="width:454px;height:429px;background:#FFFFFF;" version="1.1" viewBox="0 0 454 429" width="454px" zoomAndPan="magnify" class="diagram"><defs/><g><g class="cluster" data-entity="Sistema de Ventas" data-source-line="1" data-uid="ent0002" id="cluster_Sistema de Ventas"><path d="M8.5,6 L156.9717,6 A3.75,3.75 0 0 1 159.4717,8.5 L166.4717,28.2969 L444.5,28.2969 A2.5,2.5 0 0 1 447,30.7969 L447,419.69 A2.5,2.5 0 0 1 444.5,422.19 L8.5,422.19 A2.5,2.5 0 0 1 6,419.69 L6,8.5 A2.5,2.5 0 0 1 8.5,6" fill="none" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="6" x2="166.4717" y1="28.2969" y2="28.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="147.4717" x="10" y="20.9951">Sistema de Ventas</text></g><g class="entity" data-entity="Interfaz Web" data-source-line="2" data-uid="ent0003" id="entity_Interfaz Web"><rect fill="#F1F1F1" height="46.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="129.5098" x="159.25" y="41"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="268.7598" y="46"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="266.7598" y="48"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="266.7598" y="52"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="89.5098" x="174.25" y="73.9951">Interfaz Web</text></g><g class="entity" data-entity="Controlador" data-source-line="2" data-uid="ent0004" id="entity_Controlador"><rect fill="#F1F1F1" height="46.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="122.7012" x="162.65" y="147.3"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="265.3512" y="152.3"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="263.3512" y="154.3"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="263.3512" y="158.3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="82.7012" x="177.65" y="180.2951">Controlador</text></g><g class="entity" data-entity="Servicio de Usuarios" data-source-line="3" data-uid="ent0006" id="entity_Servicio de Usuarios"><rect fill="#F1F1F1" height="46.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="182.4814" x="21.76" y="253.6"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="184.2414" y="258.6"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="182.2414" y="260.6"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="182.2414" y="264.6"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="142.4814" x="36.76" y="286.5951">Servicio de Usuarios</text></g><g class="entity" data-entity="Servicio de Productos" data-source-line="4" data-uid="ent0008" id="entity_Servicio de Productos"><rect fill="#F1F1F1" height="46.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="191.5527" x="239.22" y="253.6"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="410.7727" y="258.6"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="408.7727" y="260.6"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="408.7727" y="264.6"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="151.5527" x="254.22" y="286.5951">Servicio de Productos</text></g><g class="entity" data-entity="Base de Datos" data-source-line="5" data-uid="ent0010" id="entity_Base de Datos"><rect fill="#F1F1F1" height="46.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="141.1992" x="153.4" y="359.89"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="274.5992" y="364.89"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="272.5992" y="366.89"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="272.5992" y="370.89"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="101.1992" x="168.4" y="392.8851">Base de Datos</text></g><g class="link" data-entity-1="Interfaz Web" data-entity-2="Controlador" data-source-line="2" data-uid="lnk5" id="link_Interfaz Web_Controlador"><path d="M224,87.78 C224,105.28 224,123.38 224,140.86" fill="none" id="Interfaz Web-to-Controlador" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="224,146.86,228,137.86,224,141.86,220,137.86,224,146.86" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="Controlador" data-entity-2="Servicio de Usuarios" data-source-line="3" data-uid="lnk7" id="link_Controlador_Servicio de Usuarios"><path d="M199.91,194.08 C181.3,211.57 160.0122,231.571 141.4122,249.051" fill="none" id="Controlador-to-Servicio de Usuarios" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="137.04,253.16,146.3377,249.9114,140.6835,249.7359,140.859,244.0817,137.04,253.16" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="Controlador" data-entity-2="Servicio de Productos" data-source-line="4" data-uid="lnk9" id="link_Controlador_Servicio de Productos"><path d="M248.09,194.08 C266.7,211.57 287.9878,231.571 306.5878,249.051" fill="none" id="Controlador-to-Servicio de Productos" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="310.96,253.16,307.141,244.0817,307.3165,249.7359,301.6623,249.9114,310.96,253.16" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="Servicio de Usuarios" data-entity-2="Base de Datos" data-source-line="5" data-uid="lnk11" id="link_Servicio de Usuarios_Base de Datos"><path d="M137.09,300.38 C155.7,317.87 176.9878,337.861 195.5878,355.341" fill="none" id="Servicio de Usuarios-to-Base de Datos" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="199.96,359.45,196.141,350.3717,196.3165,356.0259,190.6623,356.2014,199.96,359.45" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="Servicio de Productos" data-entity-2="Base de Datos" data-source-line="6" data-uid="lnk12" id="link_Servicio de Productos_Base de Datos"><path d="M310.91,300.38 C292.3,317.87 271.0122,337.861 252.4122,355.341" fill="none" id="Servicio de Productos-to-Base de Datos" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="248.04,359.45,257.3377,356.2014,251.6835,356.0259,251.859,350.3717,248.04,359.45" style="stroke:#181818;stroke-width:1;"/></g></g></svg></div></div>
+
+<hr />
+<h3 id="13-diagrama-de-despliegue-deployment">1.3 Diagrama de Despliegue (Deployment)</h3>
+<pre><code class="language-puml">@startuml
+node &quot;Servidor Web&quot; {
+    [Aplicación Web]
+}
+node &quot;Servidor DB&quot; {
+    [Base de Datos]
+}
+[Aplicación Web] --&gt; [Base de Datos]
+@enduml
+</code></pre>
+<div class='puml-container'><div class="puml light" style="display: block"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" data-diagram-type="DESCRIPTION" height="251px" preserveAspectRatio="xMidYMid meet" style="width:215px;height:251px;background:#FFFFFF;" version="1.1" viewBox="0 0 215 251" width="215px" zoomAndPan="magnify" class="diagram"><defs/><g><g class="cluster" data-entity="Servidor Web" data-source-line="1" data-uid="ent0002" id="cluster_Servidor Web"><polygon fill="none" points="16,16,26,6,198,6,198,98.29,188,108.29,16,108.29,16,16" style="stroke:#181818;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;" x1="188" x2="198" y1="16" y2="6"/><line style="stroke:#181818;stroke-width:1;" x1="16" x2="188" y1="16" y2="16"/><line style="stroke:#181818;stroke-width:1;" x1="188" x2="188" y1="16" y2="108.29"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="106.7842" x="49.6079" y="31.9951">Servidor Web</text></g><g class="cluster" data-entity="Servidor DB" data-source-line="4" data-uid="ent0004" id="cluster_Servidor DB"><polygon fill="none" points="20,142.29,30,132.29,194,132.29,194,224.59,184,234.59,20,234.59,20,142.29" style="stroke:#181818;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;" x1="184" x2="194" y1="142.29" y2="132.29"/><line style="stroke:#181818;stroke-width:1;" x1="20" x2="184" y1="142.29" y2="142.29"/><line style="stroke:#181818;stroke-width:1;" x1="184" x2="184" y1="142.29" y2="234.59"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="94.1172" x="55.9414" y="158.2851">Servidor DB</text></g><g class="entity" data-entity="Aplicaci.n Web" data-source-line="2" data-uid="ent0003" id="entity_Aplicaci.n Web"><rect fill="#F1F1F1" height="46.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="147.3379" x="33.33" y="46"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="160.6679" y="51"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="158.6679" y="53"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="158.6679" y="57"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="107.3379" x="48.33" y="78.9951">Aplicación Web</text></g><g class="entity" data-entity="Base de Datos" data-source-line="5" data-uid="ent0005" id="entity_Base de Datos"><rect fill="#F1F1F1" height="46.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="141.1992" x="36.4" y="172.29"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="157.5992" y="177.29"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="155.5992" y="179.29"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="155.5992" y="183.29"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="101.1992" x="51.4" y="205.2851">Base de Datos</text></g><g class="link" data-entity-1="Aplicaci.n Web" data-entity-2="Base de Datos" data-source-line="7" data-uid="lnk6" id="link_Aplicaci.n Web_Base de Datos"><path d="M107,92.65 C107,115.18 107,143.63 107,166.1" fill="none" id="Aplicación Web-to-Base de Datos" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="107,172.1,111,163.1,107,167.1,103,163.1,107,172.1" style="stroke:#181818;stroke-width:1;"/></g></g></svg></div></div>
+
+<hr />
+<h2 id="2-diagramas-de-comportamiento">2. Diagramas de Comportamiento</h2>
+<h3 id="21-diagrama-de-casos-de-uso">2.1 Diagrama de Casos de Uso</h3>
+<pre><code class="language-puml">@startuml
+actor Cliente
+actor Administrador
+
+Cliente --&gt; (Comprar Producto)
+Cliente --&gt; (Consultar Producto)
+Administrador --&gt; (Agregar Producto)
+Administrador --&gt; (Eliminar Producto)
+@enduml
+</code></pre>
+<div class='puml-container'><div class="puml light" style="display: block"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" data-diagram-type="DESCRIPTION" height="185px" preserveAspectRatio="xMidYMid meet" style="width:744px;height:185px;background:#FFFFFF;" version="1.1" viewBox="0 0 744 185" width="744px" zoomAndPan="magnify" class="diagram"><defs/><g><g class="entity" data-entity="Cliente" data-source-line="1" data-uid="ent0002" id="entity_Cliente"><ellipse cx="182.7318" cy="14" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M182.7318,22 L182.7318,49 M169.7318,30 L195.7318,30 M182.7318,49 L169.7318,64 M182.7318,49 L195.7318,64" fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="49.1436" x="158.16" y="78.4951">Cliente</text></g><g class="entity" data-entity="Administrador" data-source-line="2" data-uid="ent0003" id="entity_Administrador"><ellipse cx="566.73" cy="14" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M566.73,22 L566.73,49 M553.73,30 L579.73,30 M566.73,49 L553.73,64 M566.73,49 L579.73,64" fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="99.0801" x="517.19" y="78.4951">Administrador</text></g><g class="entity" data-entity="Comprar Producto" data-source-line="4" data-uid="ent0004" id="entity_Comprar Producto"><ellipse cx="84.7336" cy="160.4567" fill="#F1F1F1" rx="78.7336" ry="18.1467" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="127.6816" x="20.8928" y="165.1052">Comprar Producto</text></g><g class="entity" data-entity="Consultar Producto" data-source-line="5" data-uid="ent0006" id="entity_Consultar Producto"><ellipse cx="279.7283" cy="160.4577" fill="#F1F1F1" rx="81.3383" ry="18.6677" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="133.8203" x="212.8182" y="165.1061">Consultar Producto</text></g><g class="entity" data-entity="Agregar Producto" data-source-line="6" data-uid="ent0008" id="entity_Agregar Producto"><ellipse cx="472.7295" cy="160.4559" fill="#F1F1F1" rx="76.6795" ry="17.7359" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="122.7803" x="411.3394" y="165.1043">Agregar Producto</text></g><g class="entity" data-entity="Eliminar Producto" data-source-line="7" data-uid="ent0010" id="entity_Eliminar Producto"><ellipse cx="661.7344" cy="160.4649" fill="#F1F1F1" rx="77.2244" ry="17.8449" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="124.0859" x="599.6914" y="165.1133">Eliminar Producto</text></g><g class="link" data-entity-1="Cliente" data-entity-2="Comprar Producto" data-source-line="4" data-uid="lnk5" id="link_Cliente_Comprar Producto"><path d="M157.75,73.92 C139.26,95.58 118.6156,119.7666 103.2156,137.8066" fill="none" id="Cliente-to-Comprar Producto" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="99.32,142.37,108.2056,138.122,102.5663,138.5672,102.1211,132.9279,99.32,142.37" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="Cliente" data-entity-2="Consultar Producto" data-source-line="5" data-uid="lnk7" id="link_Cliente_Consultar Producto"><path d="M207.71,74.21 C225.79,95.61 245.7377,119.2269 260.9377,137.2169" fill="none" id="Cliente-to-Consultar Producto" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="264.81,141.8,262.0569,132.3438,261.583,137.9807,255.9461,137.5069,264.81,141.8" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="Administrador" data-entity-2="Agregar Producto" data-source-line="6" data-uid="lnk9" id="link_Administrador_Agregar Producto"><path d="M535.95,82.24 C519.25,102.65 503.2317,122.2181 490.2917,138.0181" fill="none" id="Administrador-to-Agregar Producto" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="486.49,142.66,495.2871,138.2316,489.6581,138.7917,489.0979,133.1627,486.49,142.66" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="Administrador" data-entity-2="Eliminar Producto" data-source-line="7" data-uid="lnk11" id="link_Administrador_Eliminar Producto"><path d="M597.84,82.24 C614.72,102.65 630.9356,122.2368 644.0056,138.0368" fill="none" id="Administrador-to-Eliminar Producto" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="647.83,142.66,645.1756,133.1756,644.643,138.8073,639.0113,138.2748,647.83,142.66" style="stroke:#181818;stroke-width:1;"/></g></g></svg></div></div>
+
+<hr />
+<h3 id="22-diagrama-de-secuencia">2.2 Diagrama de Secuencia</h3>
+<pre><code class="language-puml">@startuml
+actor Cliente
+participant Sistema
+participant Inventario
+
+Cliente -&gt; Sistema : solicitarCompra()
+Sistema -&gt; Inventario : verificarStock()
+Inventario --&gt; Sistema : stockDisponible()
+Sistema --&gt; Cliente : confirmarCompra()
+@enduml
+</code></pre>
+<div class='puml-container'><div class="puml light" style="display: block"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" data-diagram-type="SEQUENCE" height="298px" preserveAspectRatio="xMidYMid meet" style="width:366px;height:298px;background:#FFFFFF;" version="1.1" viewBox="0 0 366 298" width="366px" zoomAndPan="magnify" class="diagram"><defs/><g><g><title>Cliente</title><rect fill="#000000" fill-opacity="0.00000" height="136.5313" width="8" x="28.5718" y="81.2969"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5,5;" x1="32" x2="32" y1="81.2969" y2="217.8281"/></g><g><title>Sistema</title><rect fill="#000000" fill-opacity="0.00000" height="136.5313" width="8" x="176.8208" y="81.2969"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5,5;" x1="180.626" x2="180.626" y1="81.2969" y2="217.8281"/></g><g><title>Inventario</title><rect fill="#000000" fill-opacity="0.00000" height="136.5313" width="8" x="313.7773" y="81.2969"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5,5;" x1="317.251" x2="317.251" y1="81.2969" y2="217.8281"/></g><g class="participant participant-head" data-participant="Cliente"><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="49.1436" x="5" y="77.9951">Cliente</text><ellipse cx="32.5718" cy="13.5" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M32.5718,21.5 L32.5718,48.5 M19.5718,29.5 L45.5718,29.5 M32.5718,48.5 L19.5718,63.5 M32.5718,48.5 L45.5718,63.5" fill="none" style="stroke:#181818;stroke-width:0.5;"/></g><g class="participant participant-tail" data-participant="Cliente"><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="49.1436" x="5" y="229.8232">Cliente</text><ellipse cx="32.5718" cy="241.625" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M32.5718,249.625 L32.5718,276.625 M19.5718,257.625 L45.5718,257.625 M32.5718,276.625 L19.5718,291.625 M32.5718,276.625 L45.5718,291.625" fill="none" style="stroke:#181818;stroke-width:0.5;"/></g><g class="participant participant-head" data-participant="Sistema"><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="70.3896" x="145.626" y="50"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56.3896" x="152.626" y="69.9951">Sistema</text></g><g class="participant participant-tail" data-participant="Sistema"><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="70.3896" x="145.626" y="216.8281"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56.3896" x="152.626" y="236.8232">Sistema</text></g><g class="participant participant-head" data-participant="Inventario"><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="85.0527" x="275.251" y="50"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="71.0527" x="282.251" y="69.9951">Inventario</text></g><g class="participant participant-tail" data-participant="Inventario"><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="85.0527" x="275.251" y="216.8281"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="71.0527" x="282.251" y="236.8232">Inventario</text></g><g class="message" data-participant-1="Cliente" data-participant-2="Sistema"><polygon fill="#181818" points="168.8208,108.4297,178.8208,112.4297,168.8208,116.4297,172.8208,112.4297" style="stroke:#181818;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;" x1="32.5718" x2="174.8208" y1="112.4297" y2="112.4297"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="112.5186" x="39.5718" y="107.3638">solicitarCompra()</text></g><g class="message" data-participant-1="Sistema" data-participant-2="Inventario"><polygon fill="#181818" points="305.7773,137.5625,315.7773,141.5625,305.7773,145.5625,309.7773,141.5625" style="stroke:#181818;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;" x1="180.8208" x2="311.7773" y1="141.5625" y2="141.5625"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="99.417" x="187.8208" y="136.4966">verificarStock()</text></g><g class="message" data-participant-1="Inventario" data-participant-2="Sistema"><polygon fill="#181818" points="191.8208,166.6953,181.8208,170.6953,191.8208,174.6953,187.8208,170.6953" style="stroke:#181818;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;stroke-dasharray:2,2;" x1="185.8208" x2="316.7773" y1="170.6953" y2="170.6953"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="112.9565" x="197.8208" y="165.6294">stockDisponible()</text></g><g class="message" data-participant-1="Sistema" data-participant-2="Cliente"><polygon fill="#181818" points="43.5718,195.8281,33.5718,199.8281,43.5718,203.8281,39.5718,199.8281" style="stroke:#181818;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;stroke-dasharray:2,2;" x1="37.5718" x2="179.8208" y1="199.8281" y2="199.8281"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="124.249" x="49.5718" y="194.7622">confirmarCompra()</text></g></g></svg></div></div>
+
+<hr />
+<h3 id="23-diagrama-de-actividad">2.3 Diagrama de Actividad</h3>
+<pre><code class="language-puml">@startuml
+start
+:Seleccionar producto;
+:Agregar al carrito;
+if (Stock disponible?) then (sí)
+  :Procesar pago;
+  :Generar factura;
+else (no)
+  :Mostrar mensaje de error;
+endif
+stop
+@enduml
+</code></pre>
+<div class='puml-container'><div class="puml light" style="display: block"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" data-diagram-type="ACTIVITY" height="362px" preserveAspectRatio="xMidYMid meet" style="width:330px;height:362px;background:#FFFFFF;" version="1.1" viewBox="0 0 330 362" width="330px" zoomAndPan="magnify" class="diagram"><defs/><g><ellipse cx="150.8193" cy="20" fill="#222222" rx="10" ry="10" style="stroke:#222222;stroke-width:1;"/><rect fill="#F1F1F1" height="33.9688" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="147.0547" x="77.292" y="50"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="127.0547" x="87.292" y="71.1387">Seleccionar producto</text><rect fill="#F1F1F1" height="33.9688" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="125.5625" x="88.0381" y="103.9688"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="105.5625" x="98.0381" y="125.1074">Agregar al carrito</text><polygon fill="#F1F1F1" points="102.7722,157.9375,198.8665,157.9375,210.8665,169.9375,198.8665,181.9375,102.7722,181.9375,90.7722,169.9375,102.7722,157.9375" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="96.0942" x="102.7722" y="173.7456">Stock disponible?</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="8.7871" x="81.9851" y="167.3433">sí</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="13.7017" x="210.8665" y="167.3433">no</text><rect fill="#F1F1F1" height="33.9688" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="105.7754" x="15.8516" y="191.9375"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="85.7754" x="25.8516" y="213.0762">Procesar pago</text><rect fill="#F1F1F1" height="33.9688" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="115.4785" x="11" y="245.9063"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="95.4785" x="21" y="267.0449">Generar factura</text><rect fill="#F1F1F1" height="33.9688" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="172.8418" x="146.4785" y="191.9375"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="152.8418" x="156.4785" y="213.0762">Mostrar mensaje de error</text><polygon fill="#F1F1F1" points="150.8193,285.875,162.8193,297.875,150.8193,309.875,138.8193,297.875,150.8193,285.875" style="stroke:#181818;stroke-width:0.5;"/><ellipse cx="150.8193" cy="340.875" fill="none" rx="11" ry="11" style="stroke:#222222;stroke-width:1;"/><ellipse cx="150.8193" cy="340.875" fill="#222222" rx="6" ry="6" style="stroke:#222222;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;" x1="150.8193" x2="150.8193" y1="30" y2="50"/><polygon fill="#181818" points="146.8193,40,150.8193,50,154.8193,40,150.8193,44" style="stroke:#181818;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;" x1="150.8193" x2="150.8193" y1="83.9688" y2="103.9688"/><polygon fill="#181818" points="146.8193,93.9688,150.8193,103.9688,154.8193,93.9688,150.8193,97.9688" style="stroke:#181818;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;" x1="68.7393" x2="68.7393" y1="225.9063" y2="245.9063"/><polygon fill="#181818" points="64.7393,235.9063,68.7393,245.9063,72.7393,235.9063,68.7393,239.9063" style="stroke:#181818;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;" x1="90.7722" x2="68.7393" y1="169.9375" y2="169.9375"/><line style="stroke:#181818;stroke-width:1;" x1="68.7393" x2="68.7393" y1="169.9375" y2="191.9375"/><polygon fill="#181818" points="64.7393,181.9375,68.7393,191.9375,72.7393,181.9375,68.7393,185.9375" style="stroke:#181818;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;" x1="210.8665" x2="232.8994" y1="169.9375" y2="169.9375"/><line style="stroke:#181818;stroke-width:1;" x1="232.8994" x2="232.8994" y1="169.9375" y2="191.9375"/><polygon fill="#181818" points="228.8994,181.9375,232.8994,191.9375,236.8994,181.9375,232.8994,185.9375" style="stroke:#181818;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;" x1="68.7393" x2="68.7393" y1="279.875" y2="297.875"/><line style="stroke:#181818;stroke-width:1;" x1="68.7393" x2="138.8193" y1="297.875" y2="297.875"/><polygon fill="#181818" points="128.8193,293.875,138.8193,297.875,128.8193,301.875,132.8193,297.875" style="stroke:#181818;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;" x1="232.8994" x2="232.8994" y1="225.9063" y2="297.875"/><line style="stroke:#181818;stroke-width:1;" x1="232.8994" x2="162.8193" y1="297.875" y2="297.875"/><polygon fill="#181818" points="172.8193,293.875,162.8193,297.875,172.8193,301.875,168.8193,297.875" style="stroke:#181818;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;" x1="150.8193" x2="150.8193" y1="137.9375" y2="157.9375"/><polygon fill="#181818" points="146.8193,147.9375,150.8193,157.9375,154.8193,147.9375,150.8193,151.9375" style="stroke:#181818;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;" x1="150.8193" x2="150.8193" y1="309.875" y2="329.875"/><polygon fill="#181818" points="146.8193,319.875,150.8193,329.875,154.8193,319.875,150.8193,323.875" style="stroke:#181818;stroke-width:1;"/></g></svg></div></div>
+
+<hr />
+<h3 id="24-diagrama-de-estados">2.4 Diagrama de Estados</h3>
+<pre><code class="language-puml">@startuml
+[*] --&gt; Pendiente
+
+Pendiente --&gt; Pagado : realizarPago
+Pagado --&gt; Enviado : enviarProducto
+Enviado --&gt; Entregado : confirmarEntrega
+@enduml
+</code></pre>
+<div class='puml-container'><div class="puml light" style="display: block"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" data-diagram-type="STATE" height="524px" preserveAspectRatio="xMidYMid meet" style="width:176px;height:524px;background:#FFFFFF;" version="1.1" viewBox="0 0 176 524" width="176px" zoomAndPan="magnify" class="diagram"><defs/><g><ellipse cx="53.25" cy="16" fill="#222222" rx="10" ry="10" style="stroke:#222222;stroke-width:1;"/><g id="Pendiente"><rect fill="#F1F1F1" height="50" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="90.2939" x="8.1" y="87"/><line style="stroke:#181818;stroke-width:0.5;" x1="8.1" x2="98.3939" y1="113.2969" y2="113.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70.2939" x="18.1" y="104.9951">Pendiente</text></g><g id="Pagado"><rect fill="#F1F1F1" height="50" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="71.9395" x="17.28" y="214"/><line style="stroke:#181818;stroke-width:0.5;" x1="17.28" x2="89.2195" y1="240.2969" y2="240.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="51.9395" x="27.28" y="231.9951">Pagado</text></g><g id="Enviado"><rect fill="#F1F1F1" height="50" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="75.9248" x="15.29" y="341"/><line style="stroke:#181818;stroke-width:0.5;" x1="15.29" x2="91.2148" y1="367.2969" y2="367.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="55.9248" x="25.29" y="358.9951">Enviado</text></g><g id="Entregado"><rect fill="#F1F1F1" height="50" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="92.4951" x="7" y="468"/><line style="stroke:#181818;stroke-width:0.5;" x1="7" x2="99.4951" y1="494.2969" y2="494.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="72.4951" x="17" y="485.9951">Entregado</text></g><g class="link" data-entity-1=".start." data-entity-2="Pendiente" data-source-line="1" data-uid="lnk4" id="link_.start._Pendiente"><path d="M53.25,26.36 C53.25,40.29 53.25,60.95 53.25,80.65" fill="none" id="*start*-to-Pendiente" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="53.25,86.65,57.25,77.65,53.25,81.65,49.25,77.65,53.25,86.65" style="stroke:#181818;stroke-width:1;"/></g><g class="link" data-entity-1="Pendiente" data-entity-2="Pagado" data-source-line="3" data-uid="lnk6" id="link_Pendiente_Pagado"><path d="M53.25,137.4 C53.25,159.42 53.25,185.66 53.25,207.66" fill="none" id="Pendiente-to-Pagado" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="53.25,213.66,57.25,204.66,53.25,208.66,49.25,204.66,53.25,213.66" style="stroke:#181818;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="80.6787" x="54.25" y="180.0669">realizarPago</text></g><g class="link" data-entity-1="Pagado" data-entity-2="Enviado" data-source-line="4" data-uid="lnk8" id="link_Pagado_Enviado"><path d="M53.25,264.4 C53.25,286.42 53.25,312.66 53.25,334.66" fill="none" id="Pagado-to-Enviado" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="53.25,340.66,57.25,331.66,53.25,335.66,49.25,331.66,53.25,340.66" style="stroke:#181818;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="98.6807" x="54.25" y="307.0669">enviarProducto</text></g><g class="link" data-entity-1="Enviado" data-entity-2="Entregado" data-source-line="5" data-uid="lnk10" id="link_Enviado_Entregado"><path d="M53.25,391.4 C53.25,413.42 53.25,439.66 53.25,461.66" fill="none" id="Enviado-to-Entregado" style="stroke:#181818;stroke-width:1;"/><polygon fill="#181818" points="53.25,467.66,57.25,458.66,53.25,462.66,49.25,458.66,53.25,467.66" style="stroke:#181818;stroke-width:1;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="113.9595" x="54.25" y="434.0669">confirmarEntrega</text></g></g></svg></div></div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../phases/" class="btn btn-neutral float-left" title="Fases del proceso"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../views-4%2B1/" class="btn btn-neutral float-right" title="4+1 Vistas">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../phases/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../views-4%2B1/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+      <script src="../../assets/mkdocs_puml/puml.js"></script>
+      <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+      <script src="../../assets/mkdocs_puml/interaction.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

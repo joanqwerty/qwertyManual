@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Primera parte de Linux embebido en Orange Pi Zero 3 - QwertyManual</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../../css/extra.css" rel="stylesheet" />
+        <link href="../../../assets/mkdocs_puml/puml.css" rel="stylesheet" />
+        <link href="../../../assets/mkdocs_puml/interaction.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Primera parte de Linux embebido en Orange Pi Zero 3";
+        var mkdocs_page_input_path = "linux-development/orangepi/orangepi-zero3.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../..">
+          <img src="../../../assets/qwertyMan.png" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Inicio</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../..">Introducción</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Diseño de software</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../software-design/">Introducción al diseño de software</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../software-design/architecture/">Arquitectura de software</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../software-design/patterns/">Patrones de diseño</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Rational Unified Process</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../rup/">Introducción a RUP</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../rup/phases/">Fases del proceso</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../rup/uml/">UML</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../rup/views-4%2B1/">4+1 Vistas</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Linux Kernel Development</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../../">Guía de Desarrollo de Linux Embebido</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../linux-kernel-trees/">Estructura de ramas para el kernel de linux</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Linux embebido en Orange Pi Zero 3</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Primera parte de Linux embebido en Orange Pi Zero 3</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#primeros-pasos">Primeros pasos</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1-descargar-repositorios">1. Descargar repositorios</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-construir-las-imagenes-docker">2. Construir las imágenes Docker</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3-ejecutar-contenedor-con-volumen-montado">3. Ejecutar contenedor con volumen montado</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#iniciar-el-contenedor-linux-dev-existente">Iniciar el contenedor linux-dev existente</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#4-compilacion-del-bootloader">4. Compilación del bootloader</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#compilar-arm-trusted-firmware-atf">Compilar ARM Trusted Firmware (ATF)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#copiar-bl31bin-a-la-raiz-de-u-boot">Copiar bl31.bin a la raíz de U-Boot</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#compilar-u-boot">Compilar U-Boot</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5-grabar-en-la-tarjeta-sd">5. Grabar en la tarjeta SD</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#6-debug-y-comunicacion-serial">6. Debug y comunicación serial</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#verificar-el-dispositivo-usb-serial">Verificar el dispositivo USB-Serial</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#conectar-por-serial">Conectar por serial</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#7-compilacion-del-kernel">7. Compilación del kernel</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#configurar-el-kernel">Configurar el kernel</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#iniciando-la-compilacion">Iniciando la compilación</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#compilar-el-kernel">Compilar el kernel</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#proximos-pasos">Próximos Pasos</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../rootfs/">Segunda parte de Linux embebido en Orange Pi Zero 3</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">QwertyManual</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Linux Kernel Development</li>
+          <li class="breadcrumb-item">Linux embebido en Orange Pi Zero 3</li>
+      <li class="breadcrumb-item active">Primera parte de Linux embebido en Orange Pi Zero 3</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="linux-embebido-en-orangepi-zero-3-allwinner-h618-usando-docker">Linux Embebido en OrangePi Zero 3 - Allwinner H618 usando Docker</h1>
+<p><img alt="Orange pi zero 3" src="../../../assets/orangepi-z3/orangepi-zero3.png" /></p>
+<p>En esta guía aprenderemos a construir un sistema operativo Linux embebido en un OrangePi Zero 3 utilizando el procesador Allwinner H618 utilizando contenedores de Docker.</p>
+<h2 id="primeros-pasos">Primeros pasos</h2>
+<p>Para iniciar asegurate de tener <code>docker</code> instalado ademas de <code>git</code>.
+Crea un directorio de trabajo llamado <code>linux-dev</code> o el nombre de tu preferencia y cambia al directorio.</p>
+<pre><code class="language-bash">mkdir linux-dev
+cd linux-dev
+</code></pre>
+<p>A continuación se enumeran la serie de pasos de desarrollo del proyecto:</p>
+<h2 id="1-descargar-repositorios">1. Descargar repositorios</h2>
+<pre><code class="language-bash">git clone https://github.com/u-boot/u-boot.git --depth 1
+git clone https://github.com/ARM-software/arm-trusted-firmware.git --depth 1
+git clone -b orange-pi-6.1-sun50iw9 https://github.com/orangepi-xunlong/linux-orangepi.git --depth 1
+
+# O elige la rama orange-pi-5.13-sunxi64
+</code></pre>
+<p>Lista tu directorio para verificar el contenido.</p>
+<pre><code class="language-bash"># Comando para listar
+ls
+</code></pre>
+<p>Deberias tener algo así:</p>
+<pre><code>  arm-trusted-firmware linux-orangepi u-boot
+</code></pre>
+<h2 id="2-construir-las-imagenes-docker">2. Construir las imágenes Docker</h2>
+<pre><code class="language-bash">docker build -t uboot-builder docker/
+docker build -f docker/Dockerfile.kernel -t linux-kernel-dev docker/
+</code></pre>
+<h2 id="3-ejecutar-contenedor-con-volumen-montado">3. Ejecutar contenedor con volumen montado</h2>
+<pre><code class="language-bash"># Opción 1: Contenedor temporal
+docker run -it --rm -v $PWD:/home/builder uboot-builder bash
+
+# Opción 2: Contenedor persistente con uboot-builder
+docker run -it --name linux-dev --privileged -v $PWD:/home/builder uboot-builder bash
+
+# Opción 3: Contenedor persistente con linux-kernel-dev
+docker run -it --name linux-dev --privileged -v $PWD:/home/builder linux-kernel-dev bash
+</code></pre>
+<h3 id="iniciar-el-contenedor-linux-dev-existente">Iniciar el contenedor linux-dev existente</h3>
+<p>Si creaste un contenedor persistente ejecuta este comando, cada que quieras interactuar con el, de lo contrario utiliza la <code>Opción 1</code> del paso anterior.</p>
+<pre><code class="language-bash">docker start -ai linux-dev
+</code></pre>
+<p>Cada que cierres o apagues el contenedor deberas iniciarlo como vimos anteriormente, los siguientes pasos se deben ejecutar cuando estes dentro de la instancia del contenedor de docker.</p>
+<h2 id="4-compilacion-del-bootloader">4. Compilación del bootloader</h2>
+<h3 id="compilar-arm-trusted-firmware-atf">Compilar ARM Trusted Firmware (ATF)</h3>
+<p>Entra a la carpeta <code>arm-trusted-firmware</code> y compila el proyecto.</p>
+<pre><code class="language-bash">cd arm-trusted-firmware
+
+# Ejecuta make &lt;argumentos de entorno ej. PLAT= &gt; &lt;binario a generar Ej. bl13&gt;
+make PLAT=sun50i_h616 bl31
+</code></pre>
+<p>Esto generara un archivo en esta ruta <code>build/sun50i_h616/release/bl31.bin</code>.</p>
+<h3 id="copiar-bl31bin-a-la-raiz-de-u-boot">Copiar bl31.bin a la raíz de U-Boot</h3>
+<pre><code class="language-bash">cp build/sun50i_h616/release/bl31.bin ../u-boot/
+</code></pre>
+<p>Este paso es necesario para que no existan errores al compilar el U-Boot.</p>
+<h3 id="compilar-u-boot">Compilar U-Boot</h3>
+<p>Si estas en la carpeta <code>arm-trusted-firmware</code> ve hacia atrás y entra en la carpeta <code>u-boot</code>.</p>
+<pre><code class="language-bash"># Salir de la carpeta anterior y entrar a u-boot
+cd ../u-boot
+
+# Compilar U-Boot
+make orangepi_zero3_defconfig
+make -j$(nproc) CROSS_COMPILE=aarch64-linux-gnu-
+</code></pre>
+<h2 id="5-grabar-en-la-tarjeta-sd">5. Grabar en la tarjeta SD</h2>
+<p>A continuación presione <code>ctrl + d</code> para salir de tu contenedor, esto te dejará en la carpeta raíz de tu proyecto, asegurate de ingresar de nuevo a la carpeta <code>u-boot</code> y desde la terminal de tu computadora ejecuta el siguiente comando para grabar el binario que compilamos en tu tarjeta SD.</p>
+<p>En la opción <code>of=/dev/sdx</code> cambia por la ruta de tu dispositivo real, ejemplo: <code>of=/dev/sdb</code></p>
+<div class="admonition warning">
+<p class="admonition-title">Advertencia</p>
+<p>⚠️ Ten cuidado con este paso. Podrías dejar inutilizada tu PC si eliges el dispositivo equivocado.</p>
+</div>
+<pre><code class="language-bash">sudo dd if=u-boot-sunxi-with-spl.bin of=/dev/sdx bs=1024 seek=8 status=progress
+sync
+</code></pre>
+<h2 id="6-debug-y-comunicacion-serial">6. Debug y comunicación serial</h2>
+<h3 id="verificar-el-dispositivo-usb-serial">Verificar el dispositivo USB-Serial</h3>
+<pre><code class="language-bash">sudo dmesg | grep -i tty
+</code></pre>
+<p><strong>Salida esperada:</strong></p>
+<pre><code>usb 3-2: ch341-uart converter now attached to ttyUSB0
+</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>La salida puede variar porque el dispositivo USB-Serial puede tener diferentes nombres en diferentes sistemas.</p>
+</div>
+<h3 id="conectar-por-serial">Conectar por serial</h3>
+<pre><code class="language-bash">sudo screen /dev/ttyUSB0 115200
+</code></pre>
+<p>Conecta la placa a la corriente y si todo salió bien deberias darte algo parecido a la siguiente salida por terminal.</p>
+<p><img alt="u-boot-screen" src="../../../assets/orangepi-z3/u-boot-screen.png" /></p>
+<p>Ahora si ya tenemos el bootlader grabado y funcional en nuestra SD.</p>
+<p><strong>Para salir de screen:</strong> <code>Ctrl + A</code>, luego <code>k</code>.</p>
+<h2 id="7-compilacion-del-kernel">7. Compilación del kernel</h2>
+<h3 id="configurar-el-kernel">Configurar el kernel</h3>
+<p>Para la compilacion del kernel ingresamos a la carpeta <code>linux-orangepi</code>, el siguiente paso es descargar un archivo de configuración que necesitamos para el kernel, asi que nos dirigimos a la siguiente ruta <code>arch/arm64/configs</code>.</p>
+<pre><code class="language-bash">cd arch/arm64/configs
+</code></pre>
+<p>Estando dentro descargamos la configuracion:</p>
+<pre><code class="language-bash">wget https://raw.githubusercontent.com/orangepi-xunlong/orangepi-build/refs/heads/next/external/config/kernel/linux-6.1-sun50iw9-next.config
+</code></pre>
+<p>Renombramos el archivo como una defconfig.</p>
+<pre><code class="language-bash">mv linux-6.1-sun50iw9-next.config sun50iw9_defconfig
+</code></pre>
+<p>Y volvemos a nuestra ruta inicial del kernel.</p>
+<h3 id="iniciando-la-compilacion">Iniciando la compilación</h3>
+<p>Volvemos a nuestro proyecto raíz e ingresamos al contenedor, y desde ahí ingresamos de nuevo al proyecto <code>linux-orangepi</code> y compilamos la configuración del kernel.</p>
+<pre><code class="language-bash">make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- sun50iw9_defconfig
+
+</code></pre>
+<p>Opcional compilamos el menuconfig para ver los parametros.</p>
+<pre><code class="language-bash"># Para compilar y ver el menuconfig (Opcional)
+make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- menuconfig
+</code></pre>
+<h3 id="compilar-el-kernel">Compilar el kernel</h3>
+<p>Inciamos la compilación del kernel, esto podria demorar algunos minutos o 1 hora dependiendo de los recursos de tu PC.</p>
+<p>Con este comando compilamos todos los recursos como el kernel, los modulos, y los devices trees.</p>
+<pre><code class="language-bash">make -j$(nproc) ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu-
+</code></pre>
+<p>Si la compilación se realizó exitosamente tendremos la imagen del kernel dentro de la carpeta <code>arch/arm64/boot</code> con el nombre de <code>Image</code>, y los devices trees compilados estaran en la carpeta <code>arch/arm64/boot/dts/allwinner</code> los archivos tendrán la extensión <code>.dtb</code>.</p>
+<h2 id="proximos-pasos">Próximos Pasos</h2>
+<p>En la siguiente sección seguiremos con la segunda parte del proyecto la cual consiste en construir el <code>rootfs</code> sistema de archivos principal de nuestro sistema Linux Embebido.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../linux-kernel-trees/" class="btn btn-neutral float-left" title="Estructura de ramas para el kernel de linux"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../rootfs/" class="btn btn-neutral float-right" title="Segunda parte de Linux embebido en Orange Pi Zero 3">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../linux-kernel-trees/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../rootfs/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+      <script src="../../../assets/mkdocs_puml/puml.js"></script>
+      <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+      <script src="../../../assets/mkdocs_puml/interaction.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

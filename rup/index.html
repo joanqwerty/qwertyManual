@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Introducción a RUP - QwertyManual</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/extra.css" rel="stylesheet" />
+        <link href="../assets/mkdocs_puml/puml.css" rel="stylesheet" />
+        <link href="../assets/mkdocs_puml/interaction.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Introducci\u00f3n a RUP";
+        var mkdocs_page_input_path = "rup/index.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="..">
+          <img src="../assets/qwertyMan.png" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Inicio</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="..">Introducción</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Diseño de software</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../software-design/">Introducción al diseño de software</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../software-design/architecture/">Arquitectura de software</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../software-design/patterns/">Patrones de diseño</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Rational Unified Process</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Introducción a RUP</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1-inicio-inception">1. Inicio (Inception)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-elaboracion-elaboration-analisis">2. Elaboración (Elaboration / Análisis)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-construccion-construction-diseno-e-implementacion">3. Construcción (Construction / Diseño e Implementación)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4-pruebas-transition-verificacion-y-validacion">4. Pruebas (Transition / Verificación y Validación)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#5-mantenimiento-maintenance">5. Mantenimiento (Maintenance)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#caracteristicas-clave-de-rup">Características clave de RUP</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="phases/">Fases del proceso</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="uml/">UML</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="views-4%2B1/">4+1 Vistas</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Linux Kernel Development</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../linux-development/">Guía de Desarrollo de Linux Embebido</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../linux-development/linux-kernel-trees/">Estructura de ramas para el kernel de linux</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Linux embebido en Orange Pi Zero 3</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../linux-development/orangepi/orangepi-zero3/">Primera parte de Linux embebido en Orange Pi Zero 3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../linux-development/orangepi/rootfs/">Segunda parte de Linux embebido en Orange Pi Zero 3</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">QwertyManual</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Rational Unified Process</li>
+      <li class="breadcrumb-item active">Introducción a RUP</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="rational-unified-process-rup">Rational Unified Process (RUP)</h1>
+<p><img alt="Rup Logo" src="../assets/rup_logo.jpg" /></p>
+<p><strong>Rational Unified Process (RUP)</strong>, o Proceso Unificado de Rational, es un enfoque metodológico para el desarrollo de software que proporciona una estructura y guía para gestionar todo el ciclo de vida del desarrollo de software. RUP busca producir software de alta calidad de manera predecible y controlada.</p>
+<p>RUP se organiza en <strong>cinco etapas principales</strong>, que ayudan a planificar, diseñar, implementar y validar el software de manera iterativa y progresiva.</p>
+<hr />
+<h2 id="1-inicio-inception">1. Inicio (Inception)</h2>
+<p>La fase de <strong>Inicio</strong> se centra en definir el alcance del proyecto y sus objetivos principales.
+En esta etapa se realizan actividades como:</p>
+<ul>
+<li>Identificación de los requisitos más importantes.</li>
+<li>Definición de los actores principales y casos de uso.</li>
+<li>Evaluación de riesgos iniciales.</li>
+<li>Estimación de recursos, costos y tiempos.</li>
+<li>Creación de un plan de proyecto preliminar.</li>
+</ul>
+<p>El objetivo principal de esta fase es <strong>asegurar que el proyecto es viable y que los stakeholders están alineados</strong>.</p>
+<hr />
+<h2 id="2-elaboracion-elaboration-analisis">2. Elaboración (Elaboration / Análisis)</h2>
+<p>Durante la fase de <strong>Elaboración</strong>, se profundiza en los requisitos y se define la arquitectura del sistema.</p>
+<p>Actividades clave:</p>
+<ul>
+<li>Refinamiento de requisitos y casos de uso.</li>
+<li>Análisis de riesgos detallado.</li>
+<li>Diseño de la arquitectura básica del software.</li>
+<li>Preparación de un plan de desarrollo detallado.</li>
+<li>Validación temprana de la viabilidad técnica.</li>
+</ul>
+<p>Esta fase busca <strong>establecer una base sólida para el desarrollo y minimizar riesgos futuros</strong>.</p>
+<hr />
+<h2 id="3-construccion-construction-diseno-e-implementacion">3. Construcción (Construction / Diseño e Implementación)</h2>
+<p>La fase de <strong>Construcción</strong> está dedicada a <strong>desarrollar y construir el sistema</strong> siguiendo la arquitectura definida.</p>
+<p>Actividades principales:</p>
+<ul>
+<li>Diseño detallado de componentes y módulos.</li>
+<li>Implementación del código fuente.</li>
+<li>Integración de componentes.</li>
+<li>Pruebas unitarias y de integración.</li>
+<li>Gestión continua de la configuración.</li>
+</ul>
+<p>El objetivo es <strong>producir un sistema completo y funcional listo para pruebas más exhaustivas</strong>.</p>
+<hr />
+<h2 id="4-pruebas-transition-verificacion-y-validacion">4. Pruebas (Transition / Verificación y Validación)</h2>
+<p>La fase de <strong>Pruebas o Transición</strong> se centra en <strong>validar que el sistema cumple con los requisitos y está listo para su despliegue</strong>.</p>
+<p>Actividades:</p>
+<ul>
+<li>Pruebas de aceptación por el usuario.</li>
+<li>Corrección de defectos encontrados durante la prueba.</li>
+<li>Ajustes de rendimiento y optimización.</li>
+<li>Preparación de la documentación final del usuario.</li>
+<li>Capacitación a usuarios finales si es necesario.</li>
+</ul>
+<p>Se busca <strong>garantizar la calidad y satisfacción del cliente antes del lanzamiento</strong>.</p>
+<hr />
+<h2 id="5-mantenimiento-maintenance">5. Mantenimiento (Maintenance)</h2>
+<p>Aunque RUP formalmente tiene cuatro fases principales, el <strong>mantenimiento</strong> es un proceso continuo posterior al despliegue:</p>
+<ul>
+<li>Corrección de errores encontrados en producción.</li>
+<li>Mejoras y actualizaciones del sistema.</li>
+<li>Adaptación a nuevos requisitos o cambios tecnológicos.</li>
+<li>Gestión de la configuración y versiones futuras.</li>
+</ul>
+<p>El objetivo es <strong>mantener el sistema operativo y evolucionar con las necesidades del negocio</strong>.</p>
+<hr />
+<h2 id="caracteristicas-clave-de-rup">Características clave de RUP</h2>
+<ul>
+<li><strong>Iterativo e incremental:</strong> El desarrollo se realiza en ciclos, permitiendo ajustes tempranos.</li>
+<li><strong>Orientado a casos de uso:</strong> Los requisitos se documentan como casos de uso que guían el desarrollo.</li>
+<li><strong>Gestión de riesgos:</strong> Identificación y mitigación de riesgos desde el inicio.</li>
+<li><strong>Documentación controlada:</strong> RUP define artefactos y plantillas para estandarizar el proceso.</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../software-design/patterns/" class="btn btn-neutral float-left" title="Patrones de diseño"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="phases/" class="btn btn-neutral float-right" title="Fases del proceso">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../software-design/patterns/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="phases/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+      <script src="../assets/mkdocs_puml/puml.js"></script>
+      <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+      <script src="../assets/mkdocs_puml/interaction.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

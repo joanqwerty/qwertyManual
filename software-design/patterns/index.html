@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Patrones de diseño - QwertyManual</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/extra.css" rel="stylesheet" />
+        <link href="../../assets/mkdocs_puml/puml.css" rel="stylesheet" />
+        <link href="../../assets/mkdocs_puml/interaction.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Patrones de dise\u00f1o";
+        var mkdocs_page_input_path = "software-design/patterns.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../..">
+          <img src="../../assets/qwertyMan.png" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Inicio</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../..">Introducción</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Diseño de software</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../">Introducción al diseño de software</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../architecture/">Arquitectura de software</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Patrones de diseño</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#patrones-creacionales">Patrones Creacionales</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#patrones-estructurales">Patrones Estructurales</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#patrones-comportamentales">Patrones Comportamentales</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Rational Unified Process</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../rup/">Introducción a RUP</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../rup/phases/">Fases del proceso</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../rup/uml/">UML</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../rup/views-4%2B1/">4+1 Vistas</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Linux Kernel Development</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../linux-development/">Guía de Desarrollo de Linux Embebido</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../linux-development/linux-kernel-trees/">Estructura de ramas para el kernel de linux</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Linux embebido en Orange Pi Zero 3</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../linux-development/orangepi/orangepi-zero3/">Primera parte de Linux embebido en Orange Pi Zero 3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../linux-development/orangepi/rootfs/">Segunda parte de Linux embebido en Orange Pi Zero 3</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">QwertyManual</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Diseño de software</li>
+      <li class="breadcrumb-item active">Patrones de diseño</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="patrones-de-diseno">Patrones de diseño</h1>
+<p>Los patrones de diseño son soluciones reutilizables a problemas comunes que ocurren en el diseño de software. Proporcionan un vocabulario compartido entre desarrolladores y representan las mejores prácticas evolucionadas a lo largo del tiempo.</p>
+<p>Estos patrones se clasifican en tres categorías principales según su propósito:</p>
+<ul>
+<li><strong>Creacionales</strong>: Se enfocan en la creación de objetos de manera flexible y reutilizable</li>
+<li><strong>Estructurales</strong>: Tratan sobre la composición de clases y objetos para formar estructuras más grandes</li>
+<li><strong>Comportamentales</strong>: Se centran en la comunicación entre objetos y la asignación de responsabilidades</li>
+</ul>
+<h2 id="patrones-creacionales">Patrones Creacionales</h2>
+<ul>
+<li><strong>Singleton</strong> - Garantiza una única instancia de una clase</li>
+<li><strong>Factory Method</strong> - Crea objetos sin especificar su clase exacta</li>
+<li><strong>Abstract Factory</strong> - Crea familias de objetos relacionados</li>
+<li><strong>Builder</strong> - Construye objetos complejos paso a paso</li>
+<li><strong>Prototype</strong> - Crea objetos clonando instancias existentes</li>
+</ul>
+<h2 id="patrones-estructurales">Patrones Estructurales</h2>
+<ul>
+<li><strong>Adapter</strong> - Permite que interfaces incompatibles trabajen juntas</li>
+<li><strong>Bridge</strong> - Separa abstracción de implementación</li>
+<li><strong>Composite</strong> - Compone objetos en estructuras de árbol</li>
+<li><strong>Decorator</strong> - Añade funcionalidad a objetos dinámicamente</li>
+<li><strong>Facade</strong> - Proporciona una interfaz simplificada</li>
+<li><strong>Flyweight</strong> - Comparte eficientemente objetos similares</li>
+<li><strong>Proxy</strong> - Proporciona un sustituto o placeholder</li>
+</ul>
+<h2 id="patrones-comportamentales">Patrones Comportamentales</h2>
+<ul>
+<li><strong>Chain of Responsibility</strong> - Pasa solicitudes a través de una cadena</li>
+<li><strong>Command</strong> - Encapsula solicitudes como objetos</li>
+<li><strong>Iterator</strong> - Accede secuencialmente a elementos de una colección</li>
+<li><strong>Mediator</strong> - Define comunicación entre objetos</li>
+<li><strong>Memento</strong> - Captura y restaura estados de objetos</li>
+<li><strong>Observer</strong> - Notifica cambios a múltiples objetos</li>
+<li><strong>State</strong> - Altera comportamiento cuando cambia el estado interno</li>
+<li><strong>Strategy</strong> - Encapsula algoritmos y los hace intercambiables</li>
+<li><strong>Template Method</strong> - Define esqueleto de algoritmo en clase base</li>
+<li><strong>Visitor</strong> - Separa algoritmos de la estructura de objetos</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../architecture/" class="btn btn-neutral float-left" title="Arquitectura de software"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../rup/" class="btn btn-neutral float-right" title="Introducción a RUP">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../architecture/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../rup/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+      <script src="../../assets/mkdocs_puml/puml.js"></script>
+      <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+      <script src="../../assets/mkdocs_puml/interaction.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

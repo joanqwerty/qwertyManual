@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Fases del proceso - QwertyManual</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/extra.css" rel="stylesheet" />
+        <link href="../../assets/mkdocs_puml/puml.css" rel="stylesheet" />
+        <link href="../../assets/mkdocs_puml/interaction.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Fases del proceso";
+        var mkdocs_page_input_path = "rup/phases.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../..">
+          <img src="../../assets/qwertyMan.png" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Inicio</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../..">Introducción</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Diseño de software</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../software-design/">Introducción al diseño de software</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../software-design/architecture/">Arquitectura de software</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../software-design/patterns/">Patrones de diseño</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Rational Unified Process</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../">Introducción a RUP</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Fases del proceso</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#introduccion">Introducción</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#las-cuatro-fases-de-rup">Las Cuatro Fases de RUP</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1-fase-de-inicio-inception">1. Fase de Inicio (Inception)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-fase-de-elaboracion-elaboration">2. Fase de Elaboración (Elaboration)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3-fase-de-construccion-construction">3. Fase de Construcción (Construction)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#4-fase-de-transicion-transition">4. Fase de Transición (Transition)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#caracteristicas-clave-de-las-fases">Características Clave de las Fases</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#iterativo-e-incremental">Iterativo e Incremental</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#hitos-milestones">Hitos (Milestones)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#distribucion-del-esfuerzo">Distribución del Esfuerzo</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#conclusion">Conclusión</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../uml/">UML</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../views-4%2B1/">4+1 Vistas</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Linux Kernel Development</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../linux-development/">Guía de Desarrollo de Linux Embebido</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../linux-development/linux-kernel-trees/">Estructura de ramas para el kernel de linux</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Linux embebido en Orange Pi Zero 3</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../linux-development/orangepi/orangepi-zero3/">Primera parte de Linux embebido en Orange Pi Zero 3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../linux-development/orangepi/rootfs/">Segunda parte de Linux embebido en Orange Pi Zero 3</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">QwertyManual</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Rational Unified Process</li>
+      <li class="breadcrumb-item active">Fases del proceso</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="fases-de-rational-unified-process-rup">Fases de Rational Unified Process (RUP)</h1>
+<h2 id="introduccion">Introducción</h2>
+<p>Rational Unified Process (RUP) es una metodología de desarrollo de software que organiza el ciclo de vida del proyecto en cuatro fases principales. Cada fase tiene objetivos específicos y entregables definidos.</p>
+<h2 id="las-cuatro-fases-de-rup">Las Cuatro Fases de RUP</h2>
+<h3 id="1-fase-de-inicio-inception">1. Fase de Inicio (Inception)</h3>
+<p><strong>Objetivo:</strong> Establecer la viabilidad del proyecto y definir el alcance inicial.</p>
+<p><strong>Actividades principales:</strong>
+- Identificación de los actores y casos de uso principales
+- Evaluación de riesgos críticos
+- Estimación preliminar de costos y cronograma
+- Definición de la arquitectura candidata
+- Establecimiento del caso de negocio</p>
+<p><strong>Entregables:</strong>
+- Documento de visión
+- Modelo de casos de uso inicial
+- Glosario del proyecto
+- Plan de desarrollo de software
+- Prototipo de la arquitectura</p>
+<h3 id="2-fase-de-elaboracion-elaboration">2. Fase de Elaboración (Elaboration)</h3>
+<p><strong>Objetivo:</strong> Establecer una línea base sólida de la arquitectura del sistema y mitigar los riesgos principales.</p>
+<p><strong>Actividades principales:</strong>
+- Refinamiento de la visión del producto
+- Establecimiento de la arquitectura base
+- Eliminación de los riesgos de mayor prioridad
+- Refinamiento del plan de desarrollo
+- Desarrollo de un prototipo ejecutable</p>
+<p><strong>Entregables:</strong>
+- Modelo de casos de uso completo al 80%
+- Descripción de la arquitectura de software
+- Prototipo arquitectónico ejecutable
+- Lista de riesgos revisada
+- Plan de desarrollo refinado</p>
+<h3 id="3-fase-de-construccion-construction">3. Fase de Construcción (Construction)</h3>
+<p><strong>Objetivo:</strong> Completar el desarrollo del sistema basado en la arquitectura establecida.</p>
+<p><strong>Actividades principales:</strong>
+- Desarrollo iterativo del producto completo
+- Minimización de costos de desarrollo
+- Logro de calidad adecuada lo más rápidamente posible
+- Desarrollo de versiones operativas del producto
+- Finalización de análisis, diseño, implementación y pruebas</p>
+<p><strong>Entregables:</strong>
+- Producto de software integrado y ejecutado
+- Modelo de implementación
+- Modelo de datos
+- Material de soporte al usuario final
+- Descripción de la release actual</p>
+<h3 id="4-fase-de-transicion-transition">4. Fase de Transición (Transition)</h3>
+<p><strong>Objetivo:</strong> Poner el producto en manos de los usuarios finales.</p>
+<p><strong>Actividades principales:</strong>
+- Pruebas beta para validar el nuevo sistema
+- Entrenamiento de usuarios y mantenedores
+- Conversión de bases de datos operacionales
+- Instalación del producto en el entorno de producción
+- Soporte y mantenimiento</p>
+<p><strong>Entregables:</strong>
+- Producto de software empaquetado
+- Material de entrenamiento
+- Documentación de usuario
+- Documentación de soporte
+- Lecciones aprendidas del proyecto</p>
+<h2 id="caracteristicas-clave-de-las-fases">Características Clave de las Fases</h2>
+<h3 id="iterativo-e-incremental">Iterativo e Incremental</h3>
+<p>Cada fase contiene múltiples iteraciones que producen incrementos del producto.</p>
+<h3 id="hitos-milestones">Hitos (Milestones)</h3>
+<ul>
+<li><strong>Objetivos del Ciclo de Vida</strong> (fin de Inicio)</li>
+<li><strong>Arquitectura del Ciclo de Vida</strong> (fin de Elaboración)</li>
+<li><strong>Capacidad Operacional Inicial</strong> (fin de Construcción)</li>
+<li><strong>Release del Producto</strong> (fin de Transición)</li>
+</ul>
+<h3 id="distribucion-del-esfuerzo">Distribución del Esfuerzo</h3>
+<ul>
+<li>Inicio: 5-10% del esfuerzo total</li>
+<li>Elaboración: 15-20% del esfuerzo total</li>
+<li>Construcción: 65-75% del esfuerzo total</li>
+<li>Transición: 10-15% del esfuerzo total</li>
+</ul>
+<h2 id="conclusion">Conclusión</h2>
+<p>Las fases de RUP proporcionan un marco estructurado para el desarrollo de software, permitiendo una gestión efectiva de riesgos y una entrega incremental de valor al cliente. La naturaleza iterativa de cada fase facilita la adaptación a cambios y la mejora continua del proceso de desarrollo.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../" class="btn btn-neutral float-left" title="Introducción a RUP"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../uml/" class="btn btn-neutral float-right" title="UML">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../uml/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+      <script src="../../assets/mkdocs_puml/puml.js"></script>
+      <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+      <script src="../../assets/mkdocs_puml/interaction.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
